@@ -14,6 +14,13 @@ Shaosheng Cao, Wei Lu, and Qiongkai Xu.
 \newblock pages 891--900, 2015.
 
 \bibitem[\protect\citeauthoryear{Clauset \bgroup \em et al.\egroup
+  }{2006}]{clauset2006structural}
+Aaron Clauset, Cristopher Moore, and M~E~J Newman.
+\newblock Structural inference of hierarchies in networks.
+\newblock {\em international conference on machine learning}, pages 1--13,
+  2006.
+
+\bibitem[\protect\citeauthoryear{Clauset \bgroup \em et al.\egroup
   }{2008}]{clauset2008hierarchical}
 Aaron Clauset, Cristopher Moore, and Mark~EJ Newman.
 \newblock Hierarchical structure and the prediction of missing links in
@@ -47,6 +54,13 @@ Maria Halkidi, Yannis Batistakis, and Michalis Vazirgiannis.
 \newblock In {\em Scientific and Statistical Database Management, 2001. SSDBM
   2001. Proceedings. Thirteenth International Conference on}, pages 3--22.
   IEEE, 2001.
+
+\bibitem[\protect\citeauthoryear{Lancichinetti \bgroup \em et al.\egroup
+  }{2008}]{Lancichinetti2008Detecting}
+Andrea Lancichinetti, Santo Fortunato, and Janos Kertesz.
+\newblock Detecting the overlapping and hierarchical community structure of
+  complex networks.
+\newblock {\em New Journal of Physics}, 11(3):19--44, 2008.
 
 \bibitem[\protect\citeauthoryear{Libennowell and
   Kleinberg}{2007}]{libennowell2007the}
@@ -90,12 +104,24 @@ Bryan Perozzi, Rami Alrfou, and Steven Skiena.
 Books about us politics.
 \newblock \url{http://networkdata.ics.uci.edu/data.php?d=polbooks}.
 
+\bibitem[\protect\citeauthoryear{Roweis and Saul}{2000}]{Roweis2000Nonlinear}
+Sam~T. Roweis and Lawrence~K. Saul.
+\newblock Nonlinear dimensionality reduction by locally linear embedding.
+\newblock {\em Science}, 290(5500):2323--6, 2000.
+
 \bibitem[\protect\citeauthoryear{Rushing \bgroup \em et al.\egroup
   }{2005}]{Rushing2005ADaM}
 John Rushing, Udaysankar Nair, Udaysankar Nair, Ron Welch, Ron Welch, and Hong
   Lin.
 \newblock Adam: a data mining toolkit for scientists and engineers.
 \newblock {\em Computers and Geosciences}, 31(5):607--618, 2005.
+
+\bibitem[\protect\citeauthoryear{{Sales-Pardo} \bgroup \em et al.\egroup
+  }{2007}]{sales-pardo2007extracting}
+Marta {Sales-Pardo}, Roger {GuimerÃ}, AndrÃ©~A. {Moreira}, and LuÃ­s
+  A.~Nunes {Amaral}.
+\newblock Extracting the hierarchical organization of complex systems.
+\newblock {\em arXiv preprint arXiv:0705.1679}, 104(39):15224--15229, 2007.
 
 \bibitem[\protect\citeauthoryear{Song \bgroup \em et al.\egroup
   }{2005}]{song2005self}
@@ -151,10 +177,10 @@ Shuicheng Yan, Dong Xu, Benyu Zhang, Hongjiang Zhang, Qiang Yang, and Stephen
   29(1):40--51, 2007.
 
 \bibitem[\protect\citeauthoryear{Yang \bgroup \em et al.\egroup
-  }{2015}]{Yang2015Network}
-Cheng Yang, Deli Zhao, Deli Zhao, Edward~Y. Chang, and Edward~Y. Chang.
-\newblock Network representation learning with rich text information.
-\newblock In {\em International Conference on Artificial Intelligence}, pages
-  2111--2117, 2015.
+  }{2013}]{Yang2013Hierarchical}
+Bo~Yang, Jin Di, Jiming Liu, and Dayou Liu.
+\newblock Hierarchical community detection with applications to real-world
+  network analysis.
+\newblock {\em Data and Knowledge Engineering}, 83(4):20--38, 2013.
 
 \end{thebibliography}

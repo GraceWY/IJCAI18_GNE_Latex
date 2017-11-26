@@ -12,45 +12,45 @@ Warning--empty booktitle in Cao2015GraRep
 Warning--empty booktitle in Grover2016node2vec
 Warning--empty journal in Perozzi2014DeepWalk
 Warning--empty journal in Tsvetovat2011Social
-You've used 24 entries,
+You've used 28 entries,
             2439 wiz_defined-function locations,
-            705 strings with 8847 characters,
-and the built_in function-call counts, 10617 in all, are:
-= -- 1081
-> -- 474
+            731 strings with 9593 characters,
+and the built_in function-call counts, 12109 in all, are:
+= -- 1238
+> -- 541
 < -- 8
-+ -- 166
-- -- 162
-* -- 858
-:= -- 1660
-add.period$ -- 72
-call.type$ -- 24
-change.case$ -- 177
-chr.to.int$ -- 24
-cite$ -- 30
-duplicate$ -- 419
-empty$ -- 767
-format.name$ -- 190
-if$ -- 2227
++ -- 188
+- -- 184
+* -- 1001
+:= -- 1917
+add.period$ -- 84
+call.type$ -- 28
+change.case$ -- 204
+chr.to.int$ -- 28
+cite$ -- 34
+duplicate$ -- 466
+empty$ -- 869
+format.name$ -- 217
+if$ -- 2519
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 23
-newline$ -- 122
-num.names$ -- 69
-pop$ -- 172
+missing$ -- 27
+newline$ -- 142
+num.names$ -- 81
+pop$ -- 184
 preamble$ -- 1
-purify$ -- 201
+purify$ -- 232
 quote$ -- 0
-skip$ -- 363
+skip$ -- 397
 stack$ -- 0
-substring$ -- 589
-swap$ -- 123
+substring$ -- 677
+swap$ -- 124
 text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 192
+type$ -- 224
 warning$ -- 5
-while$ -- 79
-width$ -- 28
-write$ -- 302
+while$ -- 93
+width$ -- 33
+write$ -- 354
 (There was 1 error message)

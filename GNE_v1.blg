@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: GNE_v1.aux
+The style file: named.bst
+Database file #1: GNE.bib
+Repeated entry---line 148 of file GNE.bib
+ : @article{clauset2008hierarchical
+ :                                 ,
+I'm skipping whatever remains of this entry
+Warning--empty booktitle in Cao2015GraRep
+Warning--empty booktitle in Grover2016node2vec
+Warning--empty journal in Perozzi2014DeepWalk
+Warning--empty journal in Tsvetovat2011Social
+You've used 27 entries,
+            2439 wiz_defined-function locations,
+            729 strings with 9368 characters,
+and the built_in function-call counts, 11766 in all, are:
+= -- 1207
+> -- 520
+< -- 8
++ -- 179
+- -- 176
+* -- 971
+:= -- 1871
+add.period$ -- 82
+call.type$ -- 27
+change.case$ -- 196
+chr.to.int$ -- 27
+cite$ -- 31
+duplicate$ -- 456
+empty$ -- 842
+format.name$ -- 210
+if$ -- 2450
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 27
+newline$ -- 138
+num.names$ -- 81
+pop$ -- 167
+preamble$ -- 1
+purify$ -- 223
+quote$ -- 0
+skip$ -- 390
+stack$ -- 0
+substring$ -- 666
+swap$ -- 122
+text.length$ -- 8
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 216
+warning$ -- 4
+while$ -- 92
+width$ -- 32
+write$ -- 345
+(There was 1 error message)

@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex GNE"] 1516296314 "GNE.aux" "GNE.bbl" "GNE" 1516296376
+["bibtex GNE_v1"] 1516287175 "GNE_v1.aux" "GNE_v1.bbl" "GNE_v1" 1516289707
   "./named.bst" 1508727342 22941 5de9ab1d83bc8b693f08ecd1b7942647 ""
-  "GNE.aux" 1516296376 7578 86a4a9781661d07035c4c2f6e2f41df4 ""
-  "GNE.bcf" 0 -1 0 ""
   "GNE.bib" 1515915682 9632 64c3d9b2abf95116a0927ee3c469290f ""
+  "GNE_v1.aux" 1516287176 7219 a1403a54445fed503876e3d4cc8488b2 ""
+  "GNE_v1.bcf" 0 -1 0 ""
   (generated)
-  "GNE.bbl"
-  "GNE.blg"
-["pdflatex"] 1516296375 "GNE.tex" "GNE.pdf" "GNE" 1516296376
+  "GNE_v1.blg"
+  "GNE_v1.bbl"
+["pdflatex"] 1516287175 "GNE_v1.tex" "GNE_v1.pdf" "GNE_v1" 1516289707
   "/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -209,15 +209,15 @@
   "/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1461944693 1868840 e4fd5cf80129b5397a7fda0acc6e6a11 ""
   "/usr/local/texlive/2015/texmf-var/web2c/pdftex/pdflatex.fmt" 1461944732 3859655 41e612a5402d50591287106c35ed4237 ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "GNE.aux" 1516296376 7578 86a4a9781661d07035c4c2f6e2f41df4 ""
-  "GNE.bbl" 1516296314 8282 88dcb0197e99ecba9c8d4c684917a67b "bibtex GNE"
-  "GNE.tex" 1516296375 45386 50689015ccccde8500ae675aeb2144fc ""
+  "GNE_v1.aux" 1516287176 7219 a1403a54445fed503876e3d4cc8488b2 ""
+  "GNE_v1.bbl" 1516287175 7670 356fecd309368cc540f75541ae16b785 "bibtex GNE_v1"
+  "GNE_v1.tex" 1512819467 58122 b1767b87d7af5ffb8de800c3889f56a3 ""
   "figure/Galaxy.pdf" 1505203730 189601 b45aae3d2fb7cb589ba0095925181d14 ""
   "figure/Structure.pdf" 1505041032 31048 9a1051d78feaa91e3f739e49312564e3 ""
   "figure/community_preservation.pdf" 1512570832 36917 b45d8638efdc9d37edce82a99141788e ""
   "figure/visualization.pdf" 1512571116 49735 7aba0fa7a8dab1f3c38b8d9c8a2a3356 ""
   "ijcai18.sty" 1508727342 13541 5e606d6df666726434195f1e063127dc ""
   (generated)
-  "GNE.aux"
-  "GNE.pdf"
-  "GNE.log"
+  "GNE_v1.aux"
+  "GNE_v1.pdf"
+  "GNE_v1.log"

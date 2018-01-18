@@ -1,0 +1,179 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Bhagat \bgroup \em et al.\egroup
+  }{2011}]{bhagat2011node}
+Smriti Bhagat, Graham Cormode, and S~Muthukrishnan.
+\newblock Node classification in social networks.
+\newblock {\em arXiv: Social and Information Networks}, pages 115--148, 2011.
+
+\bibitem[\protect\citeauthoryear{Cao \bgroup \em et al.\egroup
+  }{2015}]{Cao2015GraRep}
+Shaosheng Cao, Wei Lu, and Qiongkai Xu.
+\newblock Grarep:learning graph representations with global structural
+  information.
+\newblock pages 891--900, 2015.
+
+\bibitem[\protect\citeauthoryear{Clauset \bgroup \em et al.\egroup
+  }{2006}]{clauset2006structural}
+Aaron Clauset, Cristopher Moore, and M~E~J Newman.
+\newblock Structural inference of hierarchies in networks.
+\newblock {\em international conference on machine learning}, pages 1--13,
+  2006.
+
+\bibitem[\protect\citeauthoryear{Clauset \bgroup \em et al.\egroup
+  }{2008}]{clauset2008hierarchical}
+Aaron Clauset, Cristopher Moore, and Mark~EJ Newman.
+\newblock Hierarchical structure and the prediction of missing links in
+  networks.
+\newblock {\em arXiv preprint arXiv:0811.0484}, 2008.
+
+\bibitem[\protect\citeauthoryear{Fouss \bgroup \em et al.\egroup
+  }{2007}]{fouss2007random-walk}
+Francois Fouss, Alain Pirotte, Jeanmichel Renders, and Marco Saerens.
+\newblock Random-walk computation of similarities between nodes of a graph with
+  application to collaborative recommendation.
+\newblock {\em IEEE Transactions on Knowledge and Data Engineering},
+  19(3):355--369, 2007.
+
+\bibitem[\protect\citeauthoryear{Girvan and Newman}{2002}]{girvan2002community}
+Michelle Girvan and Mark~EJ Newman.
+\newblock Community structure in social and biological networks.
+\newblock {\em Proceedings of the national academy of sciences},
+  99(12):7821--7826, 2002.
+
+\bibitem[\protect\citeauthoryear{Grover and
+  Leskovec}{2016}]{Grover2016node2vec}
+A~Grover and J~Leskovec.
+\newblock node2vec: Scalable feature learning for networks.
+\newblock page 855, 2016.
+
+\bibitem[\protect\citeauthoryear{Halkidi \bgroup \em et al.\egroup
+  }{2001}]{halkidi2001clustering}
+Maria Halkidi, Yannis Batistakis, and Michalis Vazirgiannis.
+\newblock Clustering algorithms and validity measures.
+\newblock In {\em Scientific and Statistical Database Management, 2001. SSDBM
+  2001. Proceedings. Thirteenth International Conference on}, pages 3--22.
+  IEEE, 2001.
+
+\bibitem[\protect\citeauthoryear{Lancichinetti \bgroup \em et al.\egroup
+  }{2008}]{Lancichinetti2008Detecting}
+Andrea Lancichinetti, Santo Fortunato, and Janos Kertesz.
+\newblock Detecting the overlapping and hierarchical community structure of
+  complex networks.
+\newblock {\em New Journal of Physics}, 11(3):19--44, 2008.
+
+\bibitem[\protect\citeauthoryear{Libennowell and
+  Kleinberg}{2007}]{libennowell2007the}
+David Libennowell and Jon~M Kleinberg.
+\newblock The link-prediction problem for social networks.
+\newblock {\em Journal of the Association for Information Science and
+  Technology}, 58(7):1019--1031, 2007.
+
+\bibitem[\protect\citeauthoryear{Maaten and
+  Hinton}{2008}]{Maaten2008Visualizing}
+Laurens Van~Der Maaten and Geoffrey Hinton.
+\newblock Visualizing data using t-sne.
+\newblock {\em Journal of Machine Learning Research}, 9(2605):2579--2605, 2008.
+
+\bibitem[\protect\citeauthoryear{Mikolov \bgroup \em et al.\egroup
+  }{2013}]{mikolov2013efficient}
+Tomas Mikolov, Kai Chen, Greg Corrado, and Jeffrey Dean.
+\newblock Efficient estimation of word representations in vector space.
+\newblock {\em arXiv preprint arXiv:1301.3781}, 2013.
+
+\bibitem[\protect\citeauthoryear{Newman}{2003}]{newman2003structure}
+Mark~EJ Newman.
+\newblock The structure and function of complex networks.
+\newblock {\em SIAM review}, 45(2):167--256, 2003.
+
+\bibitem[\protect\citeauthoryear{Perozzi \bgroup \em et al.\egroup
+  }{2014}]{Perozzi2014DeepWalk}
+Bryan Perozzi, Rami Alrfou, and Steven Skiena.
+\newblock Deepwalk: online learning of social representations.
+\newblock pages 701--710, 2014.
+
+\bibitem[\protect\citeauthoryear{Roweis and Saul}{2000}]{Roweis2000Nonlinear}
+Sam~T. Roweis and Lawrence~K. Saul.
+\newblock Nonlinear dimensionality reduction by locally linear embedding.
+\newblock {\em Science}, 290(5500):2323--6, 2000.
+
+\bibitem[\protect\citeauthoryear{Rushing \bgroup \em et al.\egroup
+  }{2005}]{Rushing2005ADaM}
+John Rushing, Udaysankar Nair, Udaysankar Nair, Ron Welch, Ron Welch, and Hong
+  Lin.
+\newblock Adam: a data mining toolkit for scientists and engineers.
+\newblock {\em Computers and Geosciences}, 31(5):607--618, 2005.
+
+\bibitem[\protect\citeauthoryear{{Sales-Pardo} \bgroup \em et al.\egroup
+  }{2007}]{sales-pardo2007extracting}
+Marta {Sales-Pardo}, Roger {GuimerÃ}, AndrÃ©~A. {Moreira}, and LuÃ­s
+  A.~Nunes {Amaral}.
+\newblock Extracting the hierarchical organization of complex systems.
+\newblock {\em arXiv preprint arXiv:0705.1679}, 104(39):15224--15229, 2007.
+
+\bibitem[\protect\citeauthoryear{Song \bgroup \em et al.\egroup
+  }{2005}]{song2005self}
+Chaoming Song, Shlomo Havlin, and Hernan~A Makse.
+\newblock Self-similarity of complex networks.
+\newblock {\em arXiv preprint cond-mat/0503078}, 2005.
+
+\bibitem[\protect\citeauthoryear{Tang and Liu}{2011}]{Tang2011Leveraging}
+Lei Tang and Huan Liu.
+\newblock Leveraging social media networks for classification.
+\newblock {\em Data Mining and Knowledge Discovery}, 23(3):447--478, 2011.
+
+\bibitem[\protect\citeauthoryear{Tang \bgroup \em et al.\egroup
+  }{2015}]{Tang2015LINE}
+Jian Tang, Meng Qu, Mingzhe Wang, Ming Zhang, Jun Yan, and Qiaozhu Mei.
+\newblock Line: Large-scale information network embedding.
+\newblock In {\em International Conference on World Wide Web}, pages
+  1067--1077, 2015.
+
+\bibitem[\protect\citeauthoryear{Tenenbaum \bgroup \em et al.\egroup
+  }{2000}]{Tenenbaum2000A}
+J.~B. Tenenbaum, Silva~V De, and J.~C. Langford.
+\newblock A global geometric framework for nonlinear dimensionality reduction.
+\newblock {\em Science}, 290(5500):2319, 2000.
+
+\bibitem[\protect\citeauthoryear{Traud \bgroup \em et al.\egroup
+  }{2012}]{Traud2012Social}
+Amanda~L. Traud, Peter~J. Mucha, and Mason~A. Porter.
+\newblock Social structure of facebook networks.
+\newblock {\em Social Science Electronic Publishing}, 391(16):4165--4180, 2012.
+
+\bibitem[\protect\citeauthoryear{Tsvetovat and
+  Kouznetsov}{2011}]{Tsvetovat2011Social}
+Maksim Tsvetovat and Alexander Kouznetsov.
+\newblock Social network analysis for startups.
+\newblock 2011.
+
+\bibitem[\protect\citeauthoryear{Wang \bgroup \em et al.\egroup
+  }{2016}]{Wang2016Structural}
+Daixin Wang, Peng Cui, and Wenwu Zhu.
+\newblock Structural deep network embedding.
+\newblock In {\em The ACM SIGKDD International Conference}, pages 1225--1234,
+  2016.
+
+\bibitem[\protect\citeauthoryear{Wang \bgroup \em et al.\egroup
+  }{2017}]{Wang2017Community}
+Xiao Wang, Peng Cui, Jing Wang, Jian Pei, Wenwu Zhu, and Shiqiang Yang.
+\newblock Community preserving network embedding.
+\newblock In {\em The AAAI Conference on Artificial Intelligence}, 2017.
+
+\bibitem[\protect\citeauthoryear{Yan \bgroup \em et al.\egroup
+  }{2007}]{yan2007graph}
+Shuicheng Yan, Dong Xu, Benyu Zhang, Hongjiang Zhang, Qiang Yang, and Stephen
+  Lin.
+\newblock Graph embedding and extensions: A general framework for
+  dimensionality reduction.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  29(1):40--51, 2007.
+
+\bibitem[\protect\citeauthoryear{Yang \bgroup \em et al.\egroup
+  }{2013}]{Yang2013Hierarchical}
+Bo~Yang, Jin Di, Jiming Liu, and Dayou Liu.
+\newblock Hierarchical community detection with applications to real-world
+  network analysis.
+\newblock {\em Data and Knowledge Engineering}, 83(4):20--38, 2013.
+
+\end{thebibliography}

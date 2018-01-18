@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.29)  18 JAN 2018 22:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.29)  9 DEC 2017 22:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**GNE.tex
-(./GNE.tex
+**GNE_ori.tex
+(./GNE_ori.tex
 LaTeX2e <2016/03/31>
 Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
 Galaxy Network Embedding: A Hierarchical Community Structure Preserving Approac
@@ -528,14 +528,6 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
 LaTeX Info: Redefining \[ on input line 2739.
 LaTeX Info: Redefining \] on input line 2740.
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/bm.sty
-Package: bm 2016/02/27 v1.2a Bold Symbol Support (DPC/FMi)
-\symboldoperators=\mathgroup4
-\symboldletters=\mathgroup5
-\symboldsymbols=\mathgroup6
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 142.
-LaTeX Info: Redefining \bm on input line 208.
-)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfigtopskip=\skip51
@@ -657,17 +649,16 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\symAMSa=\mathgroup7
-\symAMSb=\mathgroup8
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
 \c@defn=\count114
-\c@lem=\count115
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lipsum/lipsum.sty
 Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
-\c@lips@count=\count116
+\c@lips@count=\count115
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/xargs/xargs.sty
 Package: xargs 2008/03/22 v1.1  extended macro definitions  (mpg)
@@ -680,10 +671,10 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 \XKV@toks=\toks37
 \XKV@tempa@toks=\toks38
 )
-\XKV@depth=\count117
+\XKV@depth=\count116
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
-\xargs@max=\count118
+\xargs@max=\count117
 \xargs@toksa=\toks39
 \xargs@toksb=\toks40
 )
@@ -733,10 +724,10 @@ ode.tex
 \pgf@yc=\dimen137
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
-\c@pgf@counta=\count119
-\c@pgf@countb=\count120
-\c@pgf@countc=\count121
-\c@pgf@countd=\count122
+\c@pgf@counta=\count118
+\c@pgf@countb=\count119
+\c@pgf@countc=\count120
+\c@pgf@countd=\count121
 \t@pgf@toka=\toks45
 \t@pgf@tokb=\toks46
 \t@pgf@tokc=\toks47
@@ -757,8 +748,8 @@ File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
 code.tex
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count123
-\pgfsyssoftpath@bigbuffer@items=\count124
+\pgfsyssoftpath@smallbuffer@items=\count122
+\pgfsyssoftpath@bigbuffer@items=\count123
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
 code.tex
@@ -771,7 +762,7 @@ Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen138
-\pgfmath@count=\count125
+\pgfmath@count=\count124
 \pgfmath@box=\box32
 \pgfmath@toks=\toks48
 \pgfmath@stack@operand=\toks49
@@ -796,7 +787,7 @@ code.tex)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
 erarithmetics.code.tex)))
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count126
+\c@pgfmathroundto@lastzeros=\count125
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
 de.tex
@@ -834,7 +825,7 @@ File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
 \pgfpic=\box33
 \pgf@hbox=\box34
 \pgf@layerbox@main=\box35
-\pgf@picture@serial@count=\count127
+\pgf@picture@serial@count=\count126
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
 ate.code.tex
@@ -869,7 +860,7 @@ File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
 e.tex
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
 \pgf@max=\dimen162
-\pgf@sys@shading@range@num=\count128
+\pgf@sys@shading@range@num=\count127
 )
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
 e.tex
@@ -932,7 +923,7 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
 dlers.code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count129
+\pgf@plot@mark@count=\count128
 \pgfplotmarksize=\dimen167
 )
 \tikz@lastx=\dimen168
@@ -945,19 +936,19 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \tikz@figbox@bg=\box39
 \tikz@tempbox=\box40
 \tikz@tempbox@bg=\box41
-\tikztreelevel=\count130
-\tikznumberofchildren=\count131
-\tikznumberofcurrentchild=\count132
-\tikz@fig@count=\count133
+\tikztreelevel=\count129
+\tikznumberofchildren=\count130
+\tikznumberofcurrentchild=\count131
+\tikz@fig@count=\count132
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
 e.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count134
-\pgfmatrixcurrentcolumn=\count135
-\pgf@matrix@numberofcolumns=\count136
+\pgfmatrixcurrentrow=\count133
+\pgfmatrixcurrentcolumn=\count134
+\pgf@matrix@numberofcolumns=\count135
 )
-\tikz@expandcount=\count137
+\tikz@expandcount=\count136
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarytopaths.code.tex
@@ -969,115 +960,118 @@ File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count138
-\calc@Bcount=\count139
+\calc@Acount=\count137
+\calc@Bcount=\count138
 \calc@Adimen=\dimen174
 \calc@Bdimen=\dimen175
 \calc@Askip=\skip62
 \calc@Bskip=\skip63
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count140
+\calc@Ccount=\count139
 \calc@Cskip=\skip64
 )
-\c@@todonotes@numberoftodonotes=\count141
-) (./GNE.aux)
-\openout1 = `GNE.aux'.
+\c@@todonotes@numberoftodonotes=\count140
+) (./GNE_ori.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 114.
+LaTeX Warning: Label `equ:sphere_objective' multiply defined.
 
+)
+\openout1 = `GNE_ori.aux'.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 112.
+
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count142
+\scratchcounter=\count141
 \scratchdimen=\dimen176
 \scratchbox=\box42
-\nofMPsegments=\count143
-\nofMParguments=\count144
+\nofMPsegments=\count142
+\nofMParguments=\count143
 \everyMPshowfont=\toks53
-\MPscratchCnt=\count145
+\MPscratchCnt=\count144
 \MPscratchDim=\dimen177
-\MPnumerator=\count146
-\makeMPintoPDFobject=\count147
+\MPnumerator=\count145
+\makeMPintoPDFobject=\count146
 \everyMPtoPDFconversion=\toks54
 )
 Package caption Info: Begin \AtBeginDocument code.
@@ -1134,248 +1128,184 @@ e
 ))
 ABD: EveryShipout initializing macros
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 116.
-LaTeX Font Info:    Try loading font information for U+msa on input line 116.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 114.
+LaTeX Font Info:    Try loading font information for U+msa on input line 114.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 116.
+LaTeX Font Info:    Try loading font information for U+msb on input line 114.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 116.
-
-Underfull \hbox (badness 2221) in paragraph at lines 125--126
-\OT1/ptm/m/n/10 Network em-bed-ding is an ap-proach to learn the low-
- []
-
-[1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 114.
+ [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 171.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 141.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 171.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 141.
 
-<figure/Galaxy.pdf, id=12, 995.72pt x 297.11pt>
+<figure/Galaxy.pdf, id=13, 995.72pt x 297.11pt>
 File: figure/Galaxy.pdf Graphic file (type pdf)
  <use figure/Galaxy.pdf>
-Package pdftex.def Info: figure/Galaxy.pdf used on input line 185.
-(pdftex.def)             Requested size: 231.71494pt x 69.14082pt.
+Package pdftex.def Info: figure/Galaxy.pdf used on input line 154.
+(pdftex.def)             Requested size: 243.91125pt x 72.77672pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 161.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 191.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 176.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 218.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 176.
 
 [2 <./figure/Galaxy.pdf>]
-Underfull \hbox (badness 1092) in paragraph at lines 294--295
+Underfull \hbox (badness 1092) in paragraph at lines 227--228
 []\OT1/ptm/b/n/10 Definition 4 \OT1/ptm/m/n/10 (\OT1/ptm/b/it/10 Hierarchical P
 re-serv-ing Net-work Em-bed-
  []
 
 
-Underfull \hbox (badness 1194) in paragraph at lines 294--295
+Underfull \hbox (badness 1194) in paragraph at lines 227--228
 \OT1/ptm/b/it/10 ding\OT1/ptm/m/n/10 )\OT1/ptm/b/n/10 . []\OT1/ptm/m/n/10 The H
 i-er-ar-chi-cal Pre-serv-ing Net-work Em-bed-ding
  []
 
-<figure/Structure.pdf, id=44, 489.09286pt x 382.69328pt>
+<figure/Structure.pdf, id=45, 489.09286pt x 382.69328pt>
 File: figure/Structure.pdf Graphic file (type pdf)
 
 <use figure/Structure.pdf>
-Package pdftex.def Info: figure/Structure.pdf used on input line 327.
-(pdftex.def)             Requested size: 146.34824pt x 114.51106pt.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 337.
- [3 <./figure/Structure.pdf>]
-Overfull \hbox (10.74544pt too wide) in paragraph at lines 387--387
-[] 
- []
+Package pdftex.def Info: figure/Structure.pdf used on input line 253.
+(pdftex.def)             Requested size: 243.91125pt x 190.84982pt.
+ [3]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[4]
-Underfull \hbox (badness 4913) in paragraph at lines 496--497
+ [4 <./figure/Structure.pdf>]
+Underfull \hbox (badness 4913) in paragraph at lines 387--388
 []\OT1/ptm/b/n/10 func-tion \OT1/ptm/m/sc/10 Learn-Fea-tures\OT1/ptm/m/n/10 (Ne
 twork $\OML/cmm/m/it/10 G$\OT1/ptm/m/n/10 , Hi-er-ar-chi-cal
  []
 
+<figure/community_preservation.pdf, id=109, 2823.66833pt x 1148.90816pt>
+File: figure/community_preservation.pdf Graphic file (type pdf)
 
-LaTeX Warning: Reference `prf:eta' on page 5 undefined on input line 521.
+<use figure/community_preservation.pdf>
+Package pdftex.def Info: figure/community_preservation.pdf used on input line 4
+14.
+(pdftex.def)             Requested size: 404.71353pt x 164.66779pt.
+
+<figure/visualization.pdf, id=110, 1907.125pt x 1288.815pt>
+File: figure/visualization.pdf Graphic file (type pdf)
+
+<use figure/visualization.pdf>
+Package pdftex.def Info: figure/visualization.pdf used on input line 421.
+(pdftex.def)             Requested size: 505.89pt x 341.86867pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-Underfull \hbox (badness 2384) in paragraph at lines 592--593
-\OT1/ptm/m/n/10 in Face-book so-cial net-works [] Traud \OT1/ptm/m/it/10 et al.
-\OT1/ptm/m/n/10 , 2012[] for
- []
-
-
-Underfull \hbox (badness 2573) in paragraph at lines 592--593
-\OT1/ptm/m/n/10 node clas-si-fi-ca-tion, which com-prises 100 col-leges and
- []
-
-
-Underfull \hbox (badness 2351) in paragraph at lines 592--593
-\OT1/ptm/m/n/10 uni-ver-si-ties in US. We choose the so-cial net-works in
- []
-
-
-Underfull \hbox (badness 1939) in paragraph at lines 592--593
-\OT1/ptm/m/n/10 sit(9414 nodes, 425639 edges). Be-sides, in or-der to
- []
-
-
-Underfull \hbox (badness 3514) in paragraph at lines 594--596
-\OT1/ptm/b/n/10 Relevant Al-go-rithms \OT1/ptm/m/n/10 We com-pared the GNE agai
-nst
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 594--596
-\OT1/ptm/m/n/10 the fol-low-ing six net-work em-bed-ding al-go-rithm:
- []
-
-
-Underfull \hbox (badness 2443) in paragraph at lines 594--596
-\OT1/ptm/m/it/10 et al.\OT1/ptm/m/n/10 , 2014[], Node2Vec[] Grover and Leskovec
-, 2016[],
- []
-
-[5] <figure/community_preservation.pdf, id=115, 2823.66833pt x 1148.90816pt>
-File: figure/community_preservation.pdf Graphic file (type pdf)
-
-<use figure/community_preservation.pdf>
-Package pdftex.def Info: figure/community_preservation.pdf used on input line 6
-06.
-(pdftex.def)             Requested size: 252.94499pt x 102.9064pt.
-
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 606--607
- [] 
- []
-
-<figure/visualization.pdf, id=116, 1907.125pt x 1288.815pt>
-File: figure/visualization.pdf Graphic file (type pdf)
-
-<use figure/visualization.pdf>
-Package pdftex.def Info: figure/visualization.pdf used on input line 620.
-(pdftex.def)             Requested size: 252.94499pt x 170.93433pt.
-
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 620--621
- [] 
- []
-
-
-Underfull \hbox (badness 1902) in paragraph at lines 617--623
+[5] [6 <./figure/community_preservation.pdf>]
+Underfull \hbox (badness 1902) in paragraph at lines 572--573
 []\OT1/ptm/m/n/10 For other mod-els, we lay-out the net-work into low-
  []
 
-[6 <./figure/community_preservation.pdf> <./figure/visualization.pdf>]
-(./GNE.bbl
-Underfull \hbox (badness 2205) in paragraph at lines 32--37
+[7 <./figure/visualization.pdf>]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 606.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 609.
+
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+) (./GNE_ori.bbl
+Underfull \hbox (badness 2205) in paragraph at lines 25--30
 []\OT1/ptm/m/n/10 Francois Fouss, Alain Pirotte, Jean-
  []
 
 
-Underfull \hbox (badness 2644) in paragraph at lines 46--49
+Underfull \hbox (badness 2644) in paragraph at lines 39--42
 []\OT1/ptm/m/n/10 A Grover and J Leskovec.
  []
 
 
-Underfull \hbox (badness 2671) in paragraph at lines 87--90
+Underfull \hbox (badness 1406) in paragraph at lines 60--65
+[]\OT1/ptm/m/n/10 David Lusseau, Karsten Schnei-der,
+ []
+
+[8]
+Underfull \hbox (badness 2671) in paragraph at lines 74--77
 []\OT1/ptm/m/n/10 Tomas Mikolov, Kai Chen, Greg
  []
 
 
-Underfull \hbox (badness 1502) in paragraph at lines 87--90
+Underfull \hbox (badness 1502) in paragraph at lines 74--77
 \OT1/ptm/m/n/10 Cor-rado, and Jef-frey Dean.  Ef-fi-cient es-ti-ma-tion of
  []
 
 
-Underfull \hbox (badness 3724) in paragraph at lines 98--101
+Underfull \hbox (badness 3724) in paragraph at lines 85--88
 []\OT1/ptm/m/n/10 Bryan Per-ozzi, Rami Al-r-fou, and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 109--113
+Underfull \hbox (badness 10000) in paragraph at lines 95--99
 []\OT1/ptm/m/n/10 John Rush-ing, Udaysankar Nair,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--120
-[]\OT1/ptm/m/n/10 Marta Sales-Pardo, Roger
- []
-
-
-Underfull \hbox (badness 1558) in paragraph at lines 116--120
-\OT1/ptm/m/n/10 Ama-ral.  Ex-tract-ing the hi-er-ar-chi-cal or-ga-ni-za-tion of
-
- []
-
-
-Underfull \hbox (badness 2582) in paragraph at lines 116--120
-\OT1/ptm/m/n/10 com-plex sys-tems.  \OT1/ptm/m/it/10 arXiv preprint arXiv:0705.
-1679\OT1/ptm/m/n/10 ,
- []
-
-[7]
-Underfull \hbox (badness 5189) in paragraph at lines 153--156
+Underfull \hbox (badness 5189) in paragraph at lines 127--130
 []\OT1/ptm/m/n/10 Maksim Tsve-to-vat and
  []
 
 
-Underfull \hbox (badness 1127) in paragraph at lines 159--163
+Underfull \hbox (badness 1127) in paragraph at lines 133--137
 \OT1/ptm/m/it/10 SIGKDD In-ter-na-tional Con-fer-ence\OT1/ptm/m/n/10 , pages 12
 25--1234,
  []
 
-) [8
+) [9] (./GNE_ori.aux)
 
-] (./GNE.aux)
-
-LaTeX Warning: There were undefined references.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16771 strings out of 493027
- 308097 string characters out of 6134069
- 469215 words of memory out of 5000000
- 19888 multiletter control sequences out of 15000+600000
- 33133 words of font info for 81 fonts, out of 8000000 for 9000
+ 16712 strings out of 493027
+ 307561 string characters out of 6134069
+ 470777 words of memory out of 5000000
+ 19835 multiletter control sequences out of 15000+600000
+ 33188 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,17n,77p,1184b,426s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,18n,77p,1245b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texliv
-e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/
-2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist
-/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-
-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts
-/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/ur
-w/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/ut
-mri8a.pfb>
-Output written on GNE.pdf (8 pages, 524396 bytes).
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texliv
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-di
+st/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
+/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/time
+s/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.
+pfb>
+Output written on GNE_ori.pdf (9 pages, 521362 bytes).
 PDF statistics:
- 241 PDF objects out of 1000 (max. 8388607)
- 177 compressed objects within 2 object streams
+ 240 PDF objects out of 1000 (max. 8388607)
+ 176 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

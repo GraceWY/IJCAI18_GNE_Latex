@@ -116,19 +116,19 @@ third@email.address
 \maketitle
 
 \begin{abstract}
-	Network Embedding is a method to learn the low-dimensional vector representations of nodes under the condition of preserving different kinds of the network properties. Previous works mainly focus on preserving structure information of nodes on a particular resolution, like neighbor information or community information, but cannot preserve the hierarchical community structure which enables the network can be easily analyzed on various resolutions. In this paper, we formulate a constrained optimization problem to describe the hierarchical community structure preserving network embedding. Inspired by the galaxy structure with hierarchy, we propose the Galaxy Network Embedding (GNE) model to solve the sophisticated optimization above effectively. In detail, we present an approach to embed communities into an low dimension spherical surface whose center represents the parent community they belong to. The experiments reveal that the node representations from GNE preserves the hierarchical community structure and shows advantages in several applications such as node multi-class classification and network visualization. The source code of GNE is available online.
+	Network Embedding is a method to learn the low-dimensional vector representations of nodes under the condition of preserving different kinds of the network properties. Previous works mainly focus on preserving structure information of nodes on a particular resolution, like neighbor information or community information, but can not preserve the hierarchical community structure which enables that the network can be easily analyzed on various resolutions. In this paper, we formulate a constrained optimization problem to describe the hierarchical community structure preserving network embedding. Inspired by the galaxy structure with hierarchy, we propose the Galaxy Network Embedding (GNE) model to solve the sophisticated optimization above effectively. In detail, we present an approach to embed communities into an low dimension spherical surface whose center represents the parent community they belong to. The experiments reveal that the node representations from GNE preserves the hierarchical community structure and shows advantages in several applications such as node multi-classification and network visualization. The source code of GNE is available online.
 
 \end{abstract}
 
 \section{Introduction}
 
-		Network embedding is an approach to learn the low-dimensional representation of complex network vertices under the condition of preserving different kinds of the structure information of the network. Through the network embedding, many general machine learning methods can be applied for fast and effective vertices classification, clustering and network visualization \cite{bhagat2011node}\cite{yan2007graph}.
+		Network embedding is an approach to learn the low-dimensional representation of complex network vertices by neural network \cite{Grover2016node2vec} or matrix decomposition \cite{Wang2017Community} under the condition of preserving different kinds of the structure information of the network. Through the network embedding, many general machine learning methods can be applied for fast and effective vertices classification, clustering and network visualization \cite{bhagat2011node} \cite{yan2007graph}.
 		
-		Network embedding studies include structure-preserving method \cite{Grover2016node2vec}\cite{Wang2017Community} and property-preserving method \cite{Yang2015Network}\cite{Hu2017Label}. Our paper focuses on preserving structure information. In terms of structure-preserving methods, inspired by skip-gram in word2vec \cite{mikolov2013efficient}, some methods consider the node context and represent a node with its nearby nodes \cite{Perozzi2014DeepWalk}\cite{Grover2016node2vec}. Another line of methods present more explicit optimization to preserve the pair-wise proximity of node, which take full account of the characteristics of network structures \cite{Tang2015LINE}\cite{Cao2015GraRep}\cite{Wang2016Structural}. In addition to preserving the microscopic structure, the community structure, one important mesoscopic description of network structure, is incorporated into network embedding in MNMF, of which the learned embedding space can well reflect the organizational structures and functional components of networks \cite{Wang2017Community}.
+		Network embedding works are composed of structure-preserving method and property-preserving method. Our paper focuses on preserving structure information. Thus, in terms of structure-preserving methods, inspired by the word2vec in NLP\cite{mikolov2013efficient}, some methods consider the node context and represent a node with its nearby nodes\cite{Perozzi2014DeepWalk}\cite{Grover2016node2vec}. Another methods present more explicit optimization to preserve the pair-wise proximity of node, which take full account of the characteristics of network structures\cite{Tang2015LINE}\cite{Cao2015GraRep}\cite{Wang2016Structural}. In addition to preserving the microscopic structure, the community structure, one important mesoscopic description of network structure, is incorporated into network embedding in MNMF, of which the learned embedding space can well reflect the organizational structures and functional components of networks\cite{Wang2017Community}.
 
 		Essentially, these methods mainly focus on preserving neighborhood information, or community structure on a particular scale. 
-		Nevertheless, the community structure of a complex network is hierarchical \cite{clauset2006structural}, and even some complex networks are in explicitly hierarchical structure, such as (wordnet) social networks, air transportation networks, and metabolic networks. 
-		In the presence of hierarchy, the concept of community structure becomes richer \cite{sales-pardo2007extracting}. For instance, in the chemical network, amino acids constitute proteins, which in turn are composed of basic chemical elements. 
+		Nevertheless, the community structure of a complex network is hierarchical\cite{clauset2006structural}, such as social networks, air transportation networks, and metabolic networks. 
+		In the presence of hierarchy, the concept of community structure becomes richer\cite{sales-pardo2007extracting}, for instance, in the chemical network, amino acids constitute proteins, which in turn are composed of basic chemical elements. 
 		In a word, the hierarchical community preserving network embedding can provide richer structural information, and make it easier to analyze the network on different resolutions.
 		%Such hierarchical structure networks are most often represented as a tree structure or dendrogram(see Figure \ref{fig:intuition}. (a) (b)). Thus, hierarchical community structure is one of the most prominent features of networks, but existing models can not preserve this information. In a word, compared with the off-the-shelf embedding methods, the hierarchical community preserving network embedding can provide richer structural information, and make it easier to analyze the network on different resolutions.
 
@@ -148,18 +148,17 @@ third@email.address
 
 		%It is challengeable to formulate the hierarchical community preserving network embedding. To the best of our knowledge, the essence of the hierarchical community structure can be interpreted from two perspectives. Horizontally, the nodes in the same community are more similar to each other. Vertically, a community in the deeper level has a greater cohesion degree. Thus, how to design our optimization with these essence is a challenge as well. Besides, the third challenge is to solve the optimization effectively and efficiently.
 
-		It is challenging to formulate the hierarchical community preserving network embedding. Not only the topology relationship between the nodes of the same layer needs to be considered, but the relationship between different levels needs to be considered. In addition to formulate an effective optimization, designing a model to efficiently solve it is a challenge as well. 
+		It is challengeable to formulate the hierarchical community preserving network embedding. Not only the topology relationship between the nodes of the same layer needs to be considered, but the relationship between different levels needs to be considered. In addition to formulate an effective optimization, designing a model to efficiently solve it is a challenge as well. 
 
 		%In this paper, considering the essence of hierarchy, we define a constrained optimization problem to formulate the hierarchical community structure preserving network embedding and propose the Galaxy Network Embedding (GNE) model to solve it. We regard communities composed of sub-communities as galaxies, another type of systems with hierarchical structure, composed of stellar systems (see Figure \ref{fig:intuition}. (b) (c)). Inspired by the galaxy structure, we embed sub-communities on an $m$-dimensional spherical surface whose spherical center is the parent community they belong to. The radii of the embedded communities indicate the cohesion degree. The embedding process of all communities and vertices is recursively implemented as described above.
 
-		In this paper, in order to preserve the hierarchical community structure for the networks in explicit hierarchy, we define a constrained optimization problem on network embedding. To the best of our knowledge, two types of relationship should be preserved on the hierarchical community network embedding. The first is local information which preserves the microscopic structure (pairwise node similarity) in the same community at a certain layer. The second is hierarchy information. Horizontally, the nodes in the same community are more similar to each other. Vertically, a community in the deeper level has a greater cohesion degree (E.g. The earth is closer to the moon, farther from the sun). Thus, an optimization extends from GraRep \cite{Cao2015GraRep}, is defined to preserve the pairwise similarity between communities, with constraints on hierarchy horizontally and vertically. 
+		In this paper, we define a constrained optimization problem to formulate the hierarchical community structure preserving network embedding and propose the Galaxy Network Embedding (GNE) model to solve it. To the best of our knowledge, two type of relationship should be preserved on the hierarchical community network embedding. The first is local information which preserve the microscopic structure(pairwise node similarity) in the same community at a certain layer. The second is hierarchy information. Horizontally, the nodes in the same community are more similar to each other. Vertically, a community in the deeper level has a greater cohesion degree. Thus, an optimization extends from GraRep\cite{Cao2015GraRep}, is defined to preserve the pair-wise similarity between communities, with constraints on hierarchy horizontally and vertically. 
 
-		In order to solve the sophisticated non-convex optimization with constraints efficiently, we propose the Galaxy Network Embedding Model. The galaxy, another type of systems with hierarchical structure, has two desirable structural characteristics which ensures that the embedding results preserve the essence of hierarchy: the first is that stars belonging to the same galaxy distribute in the sphere of ball almostly; the other is that the distance between the balls is much greater than the radius of balls. Inspired by the galaxy structure, we regard communities composed of sub-communities as galaxies composed of stellar systems (see Fig.\ref{fig:intuition}(b) (c)) 
+		In order to solve the sophisticated non-convex optimization with constraints efficiently, we propose the Galaxy Network Embedding model. The galaxy, another type of systems with hierarchical structure, has two desirable structural characteristics which ensure that the embedding results preserve the essence of hierarchy: the first is that stars belonging to the same galaxy distribute in the sphere of ball almostly; the other is that the distance between the balls is much greater than the radius of balls. Inspired by the galaxy structure, we regard communities composed of sub-communities as galaxies composed of stellar systems (see Fig.\ref{fig:intuition}(b) (c)) 
 		%and embed sub-communities on an $m$-dimensional spherical surface whose spherical center is the parent community they belong to. The radii of the embedded communities indicate the cohesion degree. The embedding process of all communities and vertices is recursively implemented as described above.
-		In detail, the original optimization problem is simplified by enhancing the constraints at first (i.e.converting the inequalities into equations) (see lemma \ref{lem:constraints}). And then, the spherical embedding is introduced to further simplify the problem. The final representations of nodes in networks can be obtain through the translation and scaling transformation rules in the Euclidean space.
- 
-		%(wordNet)the hierarchical tree of a network which can be extracted by off-the-shelf models \cite{sales-pardo2007extracting}\cite{Yang2013Hierarchical} as the input of our model. Actually, every node in the tree denote a community on a particular resolution. Especially, the leave nodes can be regarded as a community with one member. The temporary representation of each node in the tree is firstly embeded with the optimization without constraints layer by layer. And then, considering the constraints of hierarchy, we embed the temporary representation of sub-communities on an $m$-dimensional spherical surface recursively whose spherical center is the parent community they belong to. The radii of the embedded communities indicate the cohesion degree of these nodes in these embedded communities.
+		In detail, based on the hierarchical tree of a network whose nodes denote a community on a particular resolution, which can be extracted by off-the-shelf models, the temporary representation of each node in the tree is firstly embeded with the optimization without constraints layer by layer. And then, considering the constraints of hierarchy, we embed the temporary representation of sub-communities on an $m$-dimensional spherical surface recursively whose spherical center is the parent community they belong to. The radii of the embedded communities indicate the cohesion degree.
 		
+
 		%\origin{The galaxy, another type of systems with hierarchical structure, has two desirable structural characteristics which ensure that the embedding results preserve the essence of hierarchy: the first is that stars belonging to the same galaxy distribute in the sphere of ball almostly; the other is that the distance between the balls is much greater than the radius of balls.
 		%Inspired by the galaxy structure, we regard communities composed of sub-communities as galaxies composed of stellar systems (see Figure \ref{fig:intuition}(b) (c)).}
 		%In detail, An optimization extends from Grarep\cite{Cao2015GraRep}, is defined to preserve the pair-wise similarity between communities, with constraints to preserve the hierarchical structure horizontally and vertically. In particular, horizontally, the nodes in the same community are more similar to each other; Vertically, a community in the deeper level has a greater cohesion degree. In order to solve the sophisticated non-convex optimization with constraints effectively, firstly, the hierarchical tree of a network can be extracted by an off-the-shelf model of which nodes denote community on a particular resolution. And then, the temporary representation of each node in the tree is embeded with the optimization without constraints layer by layer. Subsequently, considering the constraints of hierarchy, we embed the temporary representation of sub-communities on an $m$-dimensional spherical surface whose spherical center is the parent community they belong to. The radii of the embedded communities indicate the cohesion degree. The embedding process of all communities and vertices is recursively implemented as described above.
@@ -175,7 +174,7 @@ third@email.address
 		We propose the Galaxy Network Embedding (GNE) model based on a novel spherical embedding method, which preserves the hierarchical community structure on any resolution while embedding the vertices or communities of a network into low-dimensional vectors in Euclidean space.
 		}
 		\item{
-		GNE is extensively evaluated on four real networks and four synthetic networks which are all in explicit hierarchy. The experiment results demonstrate that our model can integrally preserve the hierarchical community structure and is significantly superior to other models on vertex classification and network visulization.  
+		GNE is extensively evaluated on four real networks and four synthetic networks. The experiment results demonstrate that our model can integrally preserve the hierarchical community structure and is significantly superior to other models on vertex classification and network visulization.  
 		}
 		\end{itemize}
 		
@@ -335,45 +334,110 @@ third@email.address
 	 Therefore, we introduce the galaxy structure into our model. 
 	 
 	 \subsection{Model Framework based on Galaxy Structure}
-	 First, we simplify the Galaxy model. We suppose that galaxies are located at a spherical surface. In other words, the distances from each galaxy to the center of its galaxy group are equal. Specifically, besides the Euclidean representation $\Phi(c_i^l)$, each embedded community $c_i^l$ has another attribute $r_i^l$ (the radius of the corresponding galaxy group).
-	 We have the following constraints:
+	 First, we simplify the Galaxy model. We suppose that galaxies are located at a spherical surface. In other words, the distances from each galaxy to the center of its galaxy group are equal. Specifically, besides the Euclidean representation $\Phi(c_i^l)$, each embedded community $c_i^l$ has another attribute $r_i^l$ (the radius of the corresponding galaxy group). We have the following constraints:
 	 \begin{equation}
 	 \begin{split}
 	 	\label{equ:sphere_constraints}
-	 	\forall c_v^{l+1} & \in \Gamma(c_i^l), \quad l = 1, 2, ..., L - 1,\\
-	 	& ||\Phi(c_v^{l+1})  - \Phi(c_i^l)||_2= r_i^l, \\	
+	 	\forall c_i^{l+1} & \in \Gamma(c_k^l), \quad l = 1, 2, ..., L - 1,\\
+	 	& ||\Phi(c_i^{l+1})  - \Phi(c_k^l)||_2= r_k^l, \\	
 	 \end{split}
 	 \end{equation}
 	 \begin{equation}
-	 	\label{equ:galaxy_constraints}
-	 	\sum_{j=l}^L r^j < \zeta d_{i, *}^{l-1}, \quad \zeta < \frac{1}{5}
+	 \label{equ:galaxy_constraints}
+	 \begin{split}
+	 	\forall c_i^{l+1}, & c_j^{l+1} \in \Gamma(c_k^l), \quad l = 1, 2, ..., L - 1,\\
+	 	&r_i^{l+1}, r_j^{l+1} \ll ||\Phi(c_i^{l+1}) - \Phi(c_j^{l+1})||_2. \\	
+	 \end{split}
 	 \end{equation}
 
-	 where,
-	 \[
-	 	d_{i,*}^{l-1} = \min_{c^{l}_j \in \Gamma(\delta(c^{l}_i)), i \neq j} \lVert\Phi(c_i^{l}) - \Phi(c_j^{l})\rVert \\
-	 \]
-	 Especially, $\zeta$ is a constant that guarantees any two spherical surfaces at any layer are not intersected.
+	 %Eq. \ref{equ:sphere_constraints} and Eq. \ref{equ:galaxy_constraints} are sufficient conditions for the constraints of Eq. \ref{equ:whole_loss} (i.e. 
+	 The constraints of Eq.\ref{equ:whole_loss} can be satisfied if Eq.\ref{equ:sphere_constraints} and Eq.\ref{equ:galaxy_constraints} are satisfied(see ).
+	 %). 
+	 %我们把优化目标中的限制条件增强为Eq. 6 和Eq. 7.
+	 % 因此我们得到基于Galaxy Structure的新的优化目标
+	 %We replace the constraints in optimization objective with two stronger constraints Eq. \ref{equ:sphere_constraints} and Eq. \ref{equ:galaxy_constraints}. 
+	 %对于Eq. 7，我们通过设计合理的半径确定策略来满足它
+	 For Eq.7, we ensure it is satisfied by desiging the proper determination strategy of $r_i$. For spherical constraints Eq.\ref{equ:sphere_constraints}, we combine it with Eq.\ref{equ:local_loss} to obtaining a local optimization objective with $c_k^{l-1}$ as the parent community: 
+	  \begin{equation}
+	  \label{equ:local_objective}
+	  \begin{split}
+	  O^{(k)}(\Phi, \Phi') & = \sum_{c_i^l, c_j^l \in \Gamma(c_k^{l-1})} \frac{S_{i,j}^l}{\sum_t S_{i, t}^l} \cdot \log{\sigma(\Phi(c_i^l)^T \Phi'(c_j^l))} \\
+		 + \frac{\lambda}{|\Gamma(c_k^{l-1})|}&\sum_{c_e^l \in \Gamma(c_k^{l-1})} \frac{S_{i, e}^l}{\sum_t S_{i, t}^l} \cdot \log{\sigma(-\Phi(c_i^l)^T \Phi'(c_e^l))}, \\
+		 \\
+		s.t. \quad \forall c_i^{l+1} & \in \Gamma(c_k^l),\quad || \Phi(c_i^{l+1})  - \Phi(c_k^l)||_2= r_k^l \\
+	  \end{split}
+	  \end{equation}
+	 In this way, we can optimize the objective Eq.\ref{equ:local_objective} recursively from top to bottom in hierarchy. The whole embedding procedure is illustrated in Fig.\ref{fig:structure}. Next, we will introduce how to determine the radius of each community and how to solve the optimization problem Eq.\ref{equ:local_objective} level by level.
+	 
+	 \subsubsection{Strategy of Determining Radius}
+	 In order to ensure Eq.\ref{equ:galaxy_constraints} is satisfied, the radius $r$ and the distance $d$ between two spheres should be subject to:
+	 \begin{align}
+	 	\label{equ:linear_relationship}
+	 	r_i^l = \eta \cdot d_{i,*}^{l-1}, \eta < \frac{1}{2} \\
+	 	\label{equ:radius_sum}
+	 	\sum_{j=l}^L r^j < \zeta d_*^{l-1}, \zeta < \frac{1}{2}   
+	 \end{align}
+	 where 
+	 \begin{align}
+	 	d_{i,*}^{l-1} = \min_{c^{l}_j \in \Gamma(\delta(c^{l}_i)), i \neq j}& \lVert\Phi(c_i^{l}) - \Phi(c_j^{l})\rVert \\
+	 	\label{equ:d_and_r}
+	 	d_{i,*}^{l-1} <& 2 \cdot r_i^{l-1}
+	 \end{align}
+	 More precisely, $r^l$ denotes the sphere radius of nodes at layer l and L denotes the depth of $T_G$. Especially, we assume that $r_i^l$ and $d_{i,*}^{l-1}$ have a linear relationship and $\eta$ reflects the cohesion degree of the community $c_i^l$ relative to $c_*^l$ (see Eq.\ref{equ:linear_relationship}). The constant $\zeta$ ensures any two spherical surfaces at any layer will not intersect in Eq.\ref{equ:radius_sum}, such as $\zeta=\frac{1}{3}$.
 
 	 \begin{lem}
-	 \label{lem:constraints}
-	 The cooccurrence of Eq.\ref{equ:sphere_constraints} and Eq.\ref{equ:galaxy_constraints} is a sufficient case of the presence of constraints in the objective Eq.\ref{equ:whole_loss}.
+	 \label{prf:eta}
+	 	When $\eta$ is less than $\frac{\zeta}{1+2\zeta}$, the constraint Eq.\ref{equ:galaxy_constraints} can be satisfied, where $\zeta$ is a constant to make sure any two spherical surfaces at any layer will not intersect in Eq.\ref{equ:radius_sum}. 
+	 \end{lem}
+	 \begin{proof} 
+	 	According to Eq.\ref{equ:linear_relationship} and Eq.\ref{equ:d_and_r}, the relationship between $r^j$ and $d_*^{l-1}$ can be derived as follows, where $j \in [l, L]$:	
+	 	\begin{align}
+	 	\label{equ:derivation}
+	 		\nonumber
+	 		r^j &= \eta \cdot d_*^{j-1} < \eta \cdot 2r^{j-1} \\
+	 		\nonumber
+	 		&= 2\eta^2 \cdot d_*^{j-2} < 2^2\eta^2 \cdot r^{j-2} \\
+	 		\nonumber
+	 		&... ...\\
+	 		&< 2^{k-1}\eta^k \cdot d_*^{j-k}
+	 	\end{align}
+	 	When $k=j-l+1$, 
+	 	\begin{equation}
+	 		\label{equ:j_and_l}
+	 		r^j < 2^{j-l}\eta^{j-l+1} \cdot d_*^{l-1}
+	 	\end{equation}
+	 	thus, we get the upper bound of $r^j$. The inequation Eq.\ref{equ:radius_sum} is valid if the upper bound of $\sum r^j$ is less than $\zeta d_*^{l-1}$. Substituting Eq.\ref{equ:radius_sum} for Eq.\ref{equ:j_and_l}, we obtain:
+	 	\begin{equation}
+	 	\nonumber
+	 	\sum_{j=l}^L 2^{j-l} \eta^{j-l+1} \cdot d_*^{l-1} < \zeta d_*^{l-1} \Rightarrow \sum_{j=l}^L r^j < \zeta d_*^{l-1} 
+	 	\end{equation}
+	 	Thus, since $\eta < \frac{1}{2}$ , 
+	 	\begin{align}
+	 	\nonumber
+	 	\sum_{j=l}^L (2\eta)^{j-l+1}& < \frac{2\eta}{1-2\eta}< 2 \zeta \\
+	 	\nonumber
+	 	\eta <& \frac{\zeta}{1+2\zeta}
+	 	\end{align}
+	 \end{proof}
+	 In conclusion, when $\eta < \frac{\zeta}{1+2\zeta}$, Eq.\ref{equ:radius_sum} is satisfied, simultaneously, the constraint Eq.\ref{equ:galaxy_constraints} is satisfied. In experiments, we assign $\frac{1}{3}$ to $\zeta$.
+
+	 \begin{lem}
+	 The constraints of Eq.\ref{equ:whole_loss} can be satisfied if Eq.\ref{equ:sphere_constraints} and Eq.\ref{equ:galaxy_constraints} are satisfied
 	 \end{lem}
 	 \begin{proof}
-	 	if Eq.\ref{equ:sphere_constraints} and Eq.\ref{equ:galaxy_constraints} are satisfied simultaneously:
+	 we first proof the first constraint in Eq.\ref{equ:whole_loss} can be satisfied among communities in the same layer.
 
-	 	$\Rightarrow$ The first constraint in Eq.\ref{equ:whole_loss} can be satisfied, i.e.:
-	 	\[
-	 		|| \Phi(c_u^l) - \Phi(c_v^l) ||_2 - ||\Phi(c_u^l) - \Phi(c_w^l)||_2 < 0 	
-	 	\]
-	 	where 
-	 	\[
-	 		c_u^{l+1}, c_v^{l+1} \in \Gamma{(c_i^l)}, \quad c_w^{l+1} \in \Gamma{(c_j^l)}
-	 	\]
-	 	According to the Eq.\ref{equ:galaxy_constraints},
+	 we define:
+	 \[
+			\begin{split}
+				c_u^{l+1}, c_v^{l+1} &\in \Gamma{(c_i^l)} \\
+				c_w^{l+1} &\in \Gamma{(c_j^l)} \\
+			\end{split}
+	\]
+	 According to the Eq.\ref{equ:galaxy_constraints},
 	 \[
 	 	\begin{split}
-	 	&r_i^l, r_j^l < \frac{1}{5}||\Phi(c_i^{l}) - \Phi(c_j^{l})||_2 \\
+	 	&r_i^l, r_j^l \ll ||\Phi(c_i^{l}) - \Phi(c_j^{l})||_2 \\
 	 	&\Rightarrow r_i^l, r_j^l < ||\Phi(c_i^{l}) - \Phi(c_j^{l})||_2-r_i^l-r_j^l
 	 	\end{split}
 	 \]
@@ -387,44 +451,32 @@ third@email.address
 	 \]
 	 Thus, the first constraint in Eq.\ref{equ:whole_loss} can be satisfied.
 
-	 $\Rightarrow$ The second constraint in Eq.\ref{equ:whole_loss} can be satisfied, i.e.:
-	 \[
-	 	|| \Phi(c_v^{l+1}) - \Phi(c_i^{l})) || - ||\Phi(c_i^{l}) - \Phi(c_k^{l - 1})|| < 0
-	 \]
-	 where, 
-	 \[
-	 	c_v^{l+1} \in \Gamma{(c_i^l)}, \quad c_i^l \in \Gamma(c_k^{l-1})
-	 \]
-
-	 because:
+	 Next, we proof the second constraint between different layers in Eq.\ref{equ:whole_loss} can be satisfied. We have
 	 \[
 	 	\begin{split}
-				||\Phi(c_v^{l+1}) - \Phi(c_i^{l})||_2 = r_i^l, \quad ||\Phi(c_i^{l}) - \Phi(c_k^{l-1})||_2 = r_k^{l-1}\\ 
+				c_v^{l+1} \in \Gamma{(c_i^l)}, &\quad c_i^l \in \Gamma(c_k^{l-1})\\
+				||\Phi(c_v^{l+1}) - \Phi(c_i^{l})&||_2 = r_i^l = \eta d_{i, *}^{l-1} \\
+				||\Phi(c_i^{l}) - \Phi(c_k^{l-1})&||_2 = r_k^{l-1} = \eta d_{k, *}^{l-2} \\ 
 		\end{split}	
 	 \]
-	 and according to Eq.\ref{equ:galaxy_constraints}, we have:
+	 according to the derivation in Eq.\ref{equ:derivation}, $*$ denotes maximum:
 	 \[
 	 	\begin{split}
-	 		r_i^l < \zeta d_{i, *}^{l-1} \le &2\zeta r_k^{l-1}, \quad \zeta < \frac{1}{5} \\
-	 		\Rightarrow ||\Phi(c_v^{l+1}) - \Phi(c_i^{l})||_2 &< ||\Phi(c_i^{l}) - \Phi(c_k^{l-1})||_2
+	 		d_*^{l-1} \le &2 \cdot r_*^{l-1} \\
+	 		r_*^{l-1} = \eta \cdot &d_*^{l-2}, \quad \eta < \frac{1}{2}  \\
 	 	\end{split}
 	 \]
-
+	 thus, we can obtain
+	 \[
+	 	\begin{split}
+	 		d_*^{l-1} &< d_*^{l-2} \\
+	 		\Rightarrow ||\Phi(c_v^{l+1}) - \Phi(c_i^{l})||_2 &< ||\Phi(c_i^{l}) - \Phi(c_k^{l-1})||_2\\
+	 	\end{split}
+	 \] 
 	 In conclusion, the constraints of Eq.\ref{equ:whole_loss} can be satisfied if Eq.\ref{equ:sphere_constraints} and Eq.\ref{equ:galaxy_constraints} are satisfied.
 	 \end{proof}
 
-	 \subsubsection{Objective of Galaxy Network Embedding Model}
-	 Next, we define the GNE optimization objective with $c_k^{l-1}$ as the parent community:
-	 \begin{equation}
-	  \label{equ:local_objective}
-	  \begin{split}
-	  O^{(k)}(\Phi, \Phi') & = \sum_{c_i^l, c_j^l \in \Gamma(c_k^{l-1})} \frac{S_{i,j}^l}{\sum_t S_{i, t}^l} \cdot \log{\sigma(\Phi(c_i^l)^T \Phi'(c_j^l))} \\
-		 + \frac{\lambda}{|\Gamma(c_k^{l-1})|}&\sum_{c_e^l \in \Gamma(c_k^{l-1})} \frac{S_{i, e}^l}{\sum_t S_{i, t}^l} \cdot \log{\sigma(-\Phi(c_i^l)^T \Phi'(c_e^l))}, \\
-		 \\
-		s.t. \quad \forall c_i^{l} & \in \Gamma(c_k^{l-1}),\quad || \Phi(c_i^{l})  - \Phi(c_k^{l-1})||_2= r_k^{l-1} \\
-	  \end{split}
-	 \end{equation}
-	 Besides, we design a proper determination strategy of $r_i^l$ for each community $c_i^l$
+	 
 	 
 	 \subsection{Spherical Embedding}
 	 Compared with the optimization objective of the classic neural embedding method, we just add an extra spherical constraint in Eq.\ref{equ:local_objective}. The neural embedding method can be directly optimized using SGD, which is efficient and whose effect has been verified. Considering these advantages, we transform Eq.\ref{equ:local_objective} into a two-step optimization procedure. First, we use the Adam optimizer\cite{Rushing2005ADaM} to optimize Eq.\ref{equ:local_loss} without constraint based on neural networks, and obtain the representation of communities $\Omega(c^l_i)$ which preserving the pairwise relative Euclidean distances of communities. Second, we map $\Omega(c^l_i)$ to a spherical surface to get the final representation of communities $\Phi(c_i^l)$. Next, we introduce the spherical projection method.

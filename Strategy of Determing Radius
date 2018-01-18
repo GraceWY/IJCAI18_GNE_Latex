@@ -1,0 +1,106 @@
+we employed the following three real networks in Facebook social networks \cite{Traud2012Social} for node classification, which comprises 100 colleges and universities. We just choose the social networks in Hamilton University(2314 nodes, 96394 edges), Amherst College(2235nodes, 90954edges) and Georgetown Universit(9414 nodes, 425639 edges).  four synthetic networks HRcfor evaluations. ....
+
+we compared the GNE against the following five network embedding algorithm:DeepWalk, LINE, GraRep, Node2Vec,参数怎么设置
+
+GNE
+SC 谱聚类
+DeepWalk
+Node2vec
+LINE
+GraRep
+MNMF
+
+
+// 单表格
+\begin{table*}[!h]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		Model&
+		\multicolumn{5}{|c|}{Dophins} \\
+		\hline
+		&
+		10\% & 30\% & 50\% & 70\% & 90\%
+		\\
+		\hline
+		GNE&
+		\textbf{100} & \textbf{100} & \textbf{99.35} & \textbf{97.73} & \textbf{97.14}
+		\\
+		MNMF &
+	   	78.57 & 73.16 & 67.74 & 68.18 & 67.86 
+	   	\\
+	   	LINE & 
+	   	90.00 & 97.37 & 95.16 & 92.27 & 81.96
+	  	\\
+	  	DeepWalk & 
+	   	100 & 99.47 & 98.71 & 97.73 & 95.00
+	   	\\
+	   	\hline
+		\end{tabular}
+\end{table*}
+
+\begin{table*}[!h]
+	  \centering
+	  \begin{tabular}{|c|c|c|c|c|c||c|c|c|c|c|}
+	   \hline
+	   Model& 
+	   \multicolumn{5}{c||}{Dolphins} & 
+	   \multicolumn{5}{c|}{Polbooks} \\
+	   \hline
+	   &
+	   10\% & 30\% & 50\% & 70\% & 90\% &
+	   10\% & 30\% & 50\% & 70\% & 90\%
+	   \\
+	   \hline
+	   GNE & 
+	   \textbf{100} & \textbf{100} & \textbf{99.35} & \textbf{97.73} & \textbf{97.14} &
+	   \textbf{92.73} & \textbf{88.12} & \textbf{88.11} & \textbf{86.22} &  \textbf{85.89}
+	   \\
+	   MNMF &
+	   78.57 & 73.16 & 67.74 & 68.18 & 67.86 &
+	   89.09 & 85.31 & 83.52 & 84.46 & 70.00 
+	   \\
+	   LINE & 
+	   90.00 & 97.37 & 95.16 & 92.27 & 81.96 &
+	   82.73 & 80.31 & 81.67 & 79.19 & 72.32
+	   \\
+	   DeepWalk & 
+	   100 & 99.47 & 98.71 & 97.73 & 95.00 &
+	   87.27 & 83.44 & 85.56 & 84.19 & 84.42
+	   \\
+	   \hline
+	  \end{tabular}
+
+	  \begin{tabular}{|c|c|c|c|c|c||c|c|c|c|c|}
+	   \hline
+	   Model& 
+	   \multicolumn{5}{c||}{Amherst} & 
+	   \multicolumn{5}{c|}{Hamilton} \\
+	   \hline
+	   &
+	   10\% & 30\% & 50\% & 70\% & 90\% &
+	   10\% & 30\% & 50\% & 70\% & 90\%
+	   \\
+	   \hline
+	   GNE & 
+	   \textbf{94.91} & \textbf{94.25}  &  \textbf{93.94} & \textbf{93.97} & \textbf{93.39} &
+	   \textbf{94.66} & \textbf{94.55}  &  \textbf{94.49}  &   \textbf{94.49}  &  \textbf{93.88}
+	   \\
+	   MNMF &
+	   89.82 &  89.06 & 88.04 & 86.43 & 78.44 &
+	   91.42 & 90.32 & 89.12 & 87.02 & 81.19
+	   \\
+	   LINE & 
+	   90.76 & 91.82 & 91.48 & 91.09 & 89.42 &
+	   92.33 & 92.72 & 92.52 & 92.62 & 91.73
+	   \\
+	   DeepWalk & 
+	   90.62 & 91.65 & 91.32 & 91.13 & 90.41 &
+	   92.89 & 92.33 & 92.52 & 92.18 & 91.55
+	   \\
+	   \hline
+	  \end{tabular}
+
+	  \caption{The multi-label classification results on different percentages of test data sets.}
+	  \label{tab:classification}
+ \end{table*} 

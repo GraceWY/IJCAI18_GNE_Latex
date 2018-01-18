@@ -14,13 +14,6 @@ Shaosheng Cao, Wei Lu, and Qiongkai Xu.
 \newblock pages 891--900, 2015.
 
 \bibitem[\protect\citeauthoryear{Clauset \bgroup \em et al.\egroup
-  }{2006}]{clauset2006structural}
-Aaron Clauset, Cristopher Moore, and M~E~J Newman.
-\newblock Structural inference of hierarchies in networks.
-\newblock {\em international conference on machine learning}, pages 1--13,
-  2006.
-
-\bibitem[\protect\citeauthoryear{Clauset \bgroup \em et al.\egroup
   }{2008}]{clauset2008hierarchical}
 Aaron Clauset, Cristopher Moore, and Mark~EJ Newman.
 \newblock Hierarchical structure and the prediction of missing links in
@@ -55,26 +48,20 @@ Maria Halkidi, Yannis Batistakis, and Michalis Vazirgiannis.
   2001. Proceedings. Thirteenth International Conference on}, pages 3--22.
   IEEE, 2001.
 
-\bibitem[\protect\citeauthoryear{Hu \bgroup \em et al.\egroup
-  }{2017}]{Hu2017Label}
-Xia Hu, Xia Hu, and Xia Hu.
-\newblock Label informed attributed network embedding.
-\newblock In {\em Tenth ACM International Conference on Web Search and Data
-  Mining}, pages 731--739, 2017.
-
-\bibitem[\protect\citeauthoryear{Lancichinetti \bgroup \em et al.\egroup
-  }{2008}]{Lancichinetti2008Detecting}
-Andrea Lancichinetti, Santo Fortunato, and Janos Kertesz.
-\newblock Detecting the overlapping and hierarchical community structure of
-  complex networks.
-\newblock {\em New Journal of Physics}, 11(3):19--44, 2008.
-
 \bibitem[\protect\citeauthoryear{Libennowell and
   Kleinberg}{2007}]{libennowell2007the}
 David Libennowell and Jon~M Kleinberg.
 \newblock The link-prediction problem for social networks.
 \newblock {\em Journal of the Association for Information Science and
   Technology}, 58(7):1019--1031, 2007.
+
+\bibitem[\protect\citeauthoryear{Lusseau \bgroup \em et al.\egroup
+  }{2003}]{lusseau2003bottlenose}
+David Lusseau, Karsten Schneider, Oliver~J Boisseau, Patti Haase, Elisabeth
+  Slooten, and Steve~M Dawson.
+\newblock The bottlenose dolphin community of doubtful sound features a large
+  proportion of long-lasting associations.
+\newblock {\em Behavioral Ecology and Sociobiology}, 54(4):396--405, 2003.
 
 \bibitem[\protect\citeauthoryear{Maaten and
   Hinton}{2008}]{Maaten2008Visualizing}
@@ -99,10 +86,9 @@ Bryan Perozzi, Rami Alrfou, and Steven Skiena.
 \newblock Deepwalk: online learning of social representations.
 \newblock pages 701--710, 2014.
 
-\bibitem[\protect\citeauthoryear{Roweis and Saul}{2000}]{Roweis2000Nonlinear}
-Sam~T. Roweis and Lawrence~K. Saul.
-\newblock Nonlinear dimensionality reduction by locally linear embedding.
-\newblock {\em Science}, 290(5500):2323--6, 2000.
+\bibitem[\protect\citeauthoryear{pol}{}]{polbooks}
+Books about us politics.
+\newblock \url{http://networkdata.ics.uci.edu/data.php?d=polbooks}.
 
 \bibitem[\protect\citeauthoryear{Rushing \bgroup \em et al.\egroup
   }{2005}]{Rushing2005ADaM}
@@ -111,23 +97,11 @@ John Rushing, Udaysankar Nair, Udaysankar Nair, Ron Welch, Ron Welch, and Hong
 \newblock Adam: a data mining toolkit for scientists and engineers.
 \newblock {\em Computers and Geosciences}, 31(5):607--618, 2005.
 
-\bibitem[\protect\citeauthoryear{{Sales-Pardo} \bgroup \em et al.\egroup
-  }{2007}]{sales-pardo2007extracting}
-Marta {Sales-Pardo}, Roger {GuimerÃ}, AndrÃ©~A. {Moreira}, and LuÃ­s
-  A.~Nunes {Amaral}.
-\newblock Extracting the hierarchical organization of complex systems.
-\newblock {\em arXiv preprint arXiv:0705.1679}, 104(39):15224--15229, 2007.
-
 \bibitem[\protect\citeauthoryear{Song \bgroup \em et al.\egroup
   }{2005}]{song2005self}
 Chaoming Song, Shlomo Havlin, and Hernan~A Makse.
 \newblock Self-similarity of complex networks.
 \newblock {\em arXiv preprint cond-mat/0503078}, 2005.
-
-\bibitem[\protect\citeauthoryear{Tang and Liu}{2011}]{Tang2011Leveraging}
-Lei Tang and Huan Liu.
-\newblock Leveraging social media networks for classification.
-\newblock {\em Data Mining and Knowledge Discovery}, 23(3):447--478, 2011.
 
 \bibitem[\protect\citeauthoryear{Tang \bgroup \em et al.\egroup
   }{2015}]{Tang2015LINE}
@@ -175,13 +149,6 @@ Shuicheng Yan, Dong Xu, Benyu Zhang, Hongjiang Zhang, Qiang Yang, and Stephen
   dimensionality reduction.
 \newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
   29(1):40--51, 2007.
-
-\bibitem[\protect\citeauthoryear{Yang \bgroup \em et al.\egroup
-  }{2013}]{Yang2013Hierarchical}
-Bo~Yang, Jin Di, Jiming Liu, and Dayou Liu.
-\newblock Hierarchical community detection with applications to real-world
-  network analysis.
-\newblock {\em Data and Knowledge Engineering}, 83(4):20--38, 2013.
 
 \bibitem[\protect\citeauthoryear{Yang \bgroup \em et al.\egroup
   }{2015}]{Yang2015Network}

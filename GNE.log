@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.29)  19 JAN 2018 01:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.29)  20 JAN 2018 15:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1182,20 +1182,16 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
 
 [2 <./figure/Galaxy.pdf>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 286.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 248.
  [3]
-Overfull \hbox (10.74544pt too wide) in paragraph at lines 336--336
-[] 
- []
-
 <figure/Structure.pdf, id=52, 489.09286pt x 382.69328pt>
 File: figure/Structure.pdf Graphic file (type pdf)
 
 <use figure/Structure.pdf>
-Package pdftex.def Info: figure/Structure.pdf used on input line 374.
+Package pdftex.def Info: figure/Structure.pdf used on input line 366.
 (pdftex.def)             Requested size: 146.34824pt x 114.51106pt.
  [4 <./figure/Structure.pdf>]
-Underfull \hbox (badness 4913) in paragraph at lines 497--498
+Underfull \hbox (badness 4913) in paragraph at lines 494--495
 []\OT1/ptm/b/n/10 func-tion \OT1/ptm/m/sc/10 Learn-Fea-tures\OT1/ptm/m/n/10 (Ne
 twork $\OML/cmm/m/it/10 G$\OT1/ptm/m/n/10 , Hi-er-ar-chi-cal
  []
@@ -1205,39 +1201,39 @@ twork $\OML/cmm/m/it/10 G$\OT1/ptm/m/n/10 , Hi-er-ar-chi-cal
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 2384) in paragraph at lines 593--594
+Underfull \hbox (badness 2384) in paragraph at lines 586--587
 \OT1/ptm/m/n/10 in Face-book so-cial net-works [] Traud \OT1/ptm/m/it/10 et al.
 \OT1/ptm/m/n/10 , 2012[] for
  []
 
 
-Underfull \hbox (badness 2573) in paragraph at lines 593--594
+Underfull \hbox (badness 2573) in paragraph at lines 586--587
 \OT1/ptm/m/n/10 node clas-si-fi-ca-tion, which com-prises 100 col-leges and
  []
 
 
-Underfull \hbox (badness 2351) in paragraph at lines 593--594
+Underfull \hbox (badness 2351) in paragraph at lines 586--587
 \OT1/ptm/m/n/10 uni-ver-si-ties in US. We choose the so-cial net-works in
  []
 
 
-Underfull \hbox (badness 1939) in paragraph at lines 593--594
+Underfull \hbox (badness 1939) in paragraph at lines 586--587
 \OT1/ptm/m/n/10 sit(9414 nodes, 425639 edges). Be-sides, in or-der to
  []
 
 
-Underfull \hbox (badness 3514) in paragraph at lines 595--597
+Underfull \hbox (badness 3514) in paragraph at lines 588--590
 \OT1/ptm/b/n/10 Relevant Al-go-rithms \OT1/ptm/m/n/10 We com-pared the GNE agai
 nst
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 595--597
+Underfull \hbox (badness 10000) in paragraph at lines 588--590
 \OT1/ptm/m/n/10 the fol-low-ing six net-work em-bed-ding al-go-rithm:
  []
 
 
-Underfull \hbox (badness 2443) in paragraph at lines 595--597
+Underfull \hbox (badness 2443) in paragraph at lines 588--590
 \OT1/ptm/m/it/10 et al.\OT1/ptm/m/n/10 , 2014[], Node2Vec[] Grover and Leskovec
 , 2016[],
  []
@@ -1246,16 +1242,16 @@ Underfull \hbox (badness 2443) in paragraph at lines 595--597
 File: figure/community_preservation.pdf Graphic file (type pdf)
 
 <use figure/community_preservation.pdf>
-Package pdftex.def Info: figure/community_preservation.pdf used on input line 6
-06.
+Package pdftex.def Info: figure/community_preservation.pdf used on input line 5
+99.
 (pdftex.def)             Requested size: 252.94499pt x 102.9064pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 606--607
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 599--600
  [] 
  []
 
 
-Underfull \hbox (badness 1902) in paragraph at lines 615--616
+Underfull \hbox (badness 1902) in paragraph at lines 608--609
 []\OT1/ptm/m/n/10 For other mod-els, we lay-out the net-work into low-
  []
 
@@ -1263,7 +1259,7 @@ Underfull \hbox (badness 1902) in paragraph at lines 615--616
 File: figure/visualization.pdf Graphic file (type pdf)
 
 <use figure/visualization.pdf>
-Package pdftex.def Info: figure/visualization.pdf used on input line 619.
+Package pdftex.def Info: figure/visualization.pdf used on input line 612.
 (pdftex.def)             Requested size: 227.64894pt x 153.82516pt.
  [6 <./figure/community_preservation.pdf> <./figure/visualization.pdf>] (./GNE.
 bbl
@@ -1276,7 +1272,7 @@ Underfull \hbox (badness 2644) in paragraph at lines 46--49
 []\OT1/ptm/m/n/10 A Grover and J Leskovec.
  []
 
-[7]
+
 Underfull \hbox (badness 2671) in paragraph at lines 87--90
 []\OT1/ptm/m/n/10 Tomas Mikolov, Kai Chen, Greg
  []
@@ -1286,7 +1282,7 @@ Underfull \hbox (badness 1502) in paragraph at lines 87--90
 \OT1/ptm/m/n/10 Cor-rado, and Jef-frey Dean.  Ef-fi-cient es-ti-ma-tion of
  []
 
-
+[7]
 Underfull \hbox (badness 3724) in paragraph at lines 98--101
 []\OT1/ptm/m/n/10 Bryan Per-ozzi, Rami Al-r-fou, and
  []
@@ -1330,13 +1326,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 16775 strings out of 493027
- 308154 string characters out of 6134069
- 465259 words of memory out of 5000000
- 19892 multiletter control sequences out of 15000+600000
+ 16774 strings out of 493027
+ 308144 string characters out of 6134069
+ 464251 words of memory out of 5000000
+ 19891 multiletter control sequences out of 15000+600000
  33133 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,17n,77p,1183b,426s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,16n,77p,1183b,424s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texl
@@ -1356,7 +1352,7 @@ dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts
 /type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/ur
 w/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/ut
 mri8a.pfb>
-Output written on GNE.pdf (8 pages, 527335 bytes).
+Output written on GNE.pdf (8 pages, 527918 bytes).
 PDF statistics:
  241 PDF objects out of 1000 (max. 8388607)
  177 compressed objects within 2 object streams

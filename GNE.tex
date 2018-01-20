@@ -186,7 +186,7 @@ third@email.address
 	\section{Problem Definition}
 		We first give the definition of the hierarchical clustering tree \cite{clauset2008hierarchical} of a network.
 		\begin{defn}[\textbf{\emph{Hierarchical Clustering Tree of Network}}]
-			Given an undirected network $G = (V, E)$, the hierarchical clustering tree of $G$ is denoted as $T$ with a depth of $L$. We denote $C$ as the node set,
+			Given an undirected network $G = (V, E)$, the hierarchical clustering tree of $G$ is denoted as $T$ with a depth of $L$. $C$ is denoted as the node set,
 			% as well as the community set of $G$. 
 			$C^l$ as the node set at the $l$-th level and $c^l_i$ as the $i$-th node at the $l$-th level of $T$. $\Gamma(c)$ denotes the child node set of the node $c$ and $\delta(c)$ denotes the parent node of $c$. Meanwhile, $c^l_i$ also represents the $i$-th community while recursively dividing $G$ at the $l$-th level. For the $l$-th level of $T$,
 				\[
@@ -199,11 +199,11 @@ third@email.address
 		\end{defn}
 			%For brevity, we use $T$ to denote $T_G$. The notations of the variables used in the following paragraph are given here:  
 		
-		In order to preserve the hierarchical structure property of the network explicitly, we embed not only the vertices but also the communities of all levels. Since $c_i^L = \{v_i\}$, 
+		In order to preserve the hierarchical structure property of the network explicitly, we embed not only the vertices but also the communities of all levels. Due to $c_i^L = \{v_i\}$, 
 		%\origin{Therefore, our model can preserve the structure property on all resolutions. As a community of $G$, the leaf node $c_i^L$ contains only one vertex $v_i$, thus the representation of $v_i$ is equivalent to $c_i^L$. }
 		for brevity, we use community representation instead of vertex representation in the model. We define the community representation:
 		\begin{defn}[\textbf{\emph{Community Representation}}]
-			Given a network $G$ and its hierarchical clustering tree $T_G$, the community representation is a function $\Phi: C \rightarrow R^m$ ($m \ll |C|$) which can preserve the structure property of $G$.
+			Given a network $G$ and its hierarchical clustering tree $T_G$, the community representation is a function $\mathcal{F}: C \rightarrow R^m$ ($m \ll |C|$) which can preserve the structure property of $G$.
 		\end{defn} 
 	    In our scenario, the community representation can preserve two kinds of properties of $G$. One is the local information, i.e. the pairwise proximity between sub-communities in the same community.
 	    %\origin{(i.e. the pairwise proximity between the child nodes deriving from the same parent node in $T$)}. 
@@ -237,10 +237,16 @@ third@email.address
 		%	where $A$ is the adjacency matrix of $G$, $A_u$ is the $u$-th column of the $A$.	
 		%\end{defn}
 		%Taking community proximity preservation into consideration, 
-		We introduce pairwise optimization objective which extends 1-step optimization objective in GraRep \cite{Cao2015GraRep}.
-		%The concrete form can be defined referring to many traditional researches \cite{Tang2015LINE} \cite{mikolov2013efficient}. In this paper, we extend the 1-step optimization objective in GraRep \cite{Cao2015GraRep}. 
-		\begin{defn}[\textbf{\emph{Pairwise Optimization Objective}}]
-			To preserve the proximity between communities deriving from the same parent node $c_k^{l-1}$, the KL-divergence should be minimized between the distribution of community similarity from ground truth and learned representation respectively: 
+ 
+	\section{Galaxy Network Embedding Model}
+	\label{sec:model}
+	%Inspired by the structure of galaxies, the original optimization(see Eq.\ref{equ:whole_loss}) is transformed into an optimization with spherical constraints(see Eq.\ref{equ:local_objective}). In particular, we design a determination strategy of radii and propose a spherical embedding method for sphere of each layer in hierarchy. Finally, the algorithm of the GNE can be found in the last part of this section.  
+	 %\subsubsection{Properties of Galaxy Structure}
+	 
+	 The galaxy, another type of systems with hierarchical structure, has two desirable structural characteristics which ensure that the embedding results preserve the essence of hierarchy(see Fig.\ref{fig:structure}): The first is that stars belonging to the same galaxy distribute in the sphere of ball almostly; The other is that the distance between two galaxies is much larger than the radius of each of them.
+	 
+	 \subsection{Hierarchical Preserving Network Embedding}
+	 Firstly, we introduce pairwise optimization objective which extends 1-step optimization objective in GraRep \cite{Cao2015GraRep}. To preserve the proximity between communities deriving from the same parent node $c_k^{l-1}$, the KL-divergence should be minimized between the distribution of community similarity from ground truth and learned representation respectively: 
 			\begin{equation}
 			\label{equ:local_loss} 
 			\begin{split}
@@ -248,20 +254,9 @@ third@email.address
 			+ \frac{\lambda}{|\Gamma(c_k^{l-1})|}&\sum_{c_e^l \in \Gamma(c_k^{l-1})} \frac{S_{i, e}^l}{\sum_t S_{i, t}^l} \cdot \log{\sigma(-\Phi(c_i^l)^T \Phi'(c_e^l))}, \\
 			\end{split}
 			\end{equation}
-			where $\sigma(\cdot)$ is the sigmoid function, $\Phi(c)$ is the `current' vector of community $c$ we want and $\Phi'(c)$ is the `context' vector of community $c$ which is an auxiliary variable.
-			%defined as $\sigma(x) = (1+e^{-x})^{-1}$, 
-			$\lambda$ is a hyper-parameter related to negtive sampling indicating the number of negative samples.
-		\end{defn}
- 
-	\section{Galaxy Network Embedding Model}
-	\label{sec:model}
-	%Inspired by the structure of galaxies, the original optimization(see Eq.\ref{equ:whole_loss}) is transformed into an optimization with spherical constraints(see Eq.\ref{equ:local_objective}). In particular, we design a determination strategy of radii and propose a spherical embedding method for sphere of each layer in hierarchy. Finally, the algorithm of the GNE can be found in the last part of this section.  
-	 \subsubsection{Properties of Galaxy Structure}
-	 
-	 The galaxy, another type of systems with hierarchical structure, has two desirable structural characteristics which ensure that the embedding results preserve the essence of hierarchy(see Fig.\ref{fig:structure}): the first is that stars belonging to the same galaxy distribute in the sphere of ball almostly; the other is that the distance between two galaxies is much larger than the radius of each of them.
-	 
-	 \subsubsection{Hierarchical Preserving Network Embedding}
-	 Inspired by the galaxy structure, the hierarchical preserving network embedding problem is formally defined as a constrained optimization problem:
+	where $\sigma(\cdot)$ is the sigmoid function, $\Phi(c)$ is the `current' vector of community $c$ we want and $\Phi'(c)$ is the `context' vector of community $c$ which is an auxiliary variable. $\lambda$ is a hyper-parameter related to negtive sampling indicating the number of negative samples.
+
+	Inspired by the galaxy structure, the hierarchical preserving network embedding problem is formally defined as a constrained optimization problem:
 			\begin{equation}
 			\label{equ:whole_loss}
 			\begin{split}
@@ -278,13 +273,14 @@ third@email.address
 				\delta(c_i^{l+1}) = c^l_j, \quad \delta(c^l_j) = c^{l - 1}_k \\ 
 			\end{split}
 			\]
-		The constraints can be divided into two aspects: Horizontally, vertices belonging to the same community should be closer to each other than those belonging to different communities(see the first constraint). 
+		The constraints can be divided into two aspects: Horizontally, vertices belonging to the same community should be closer to each other than those belonging to different communities (see the first constraint). 
 		Vertically, the cohesion degree of low level communities should be less than that of high level ones in $T$ (see the second constraint). 
 	
 		It can be seen that the constrained optimization objective Eq.\ref{equ:whole_loss} is very complex, the number of whose constraints reaches $O (|V|^3) $. It is hard to solve the optimization problem directly.
 
-	 \subsection{Model Framework based on Galaxy Structure}
-	 First, we suppose galaxies are located at a spherical surface to simplify the Galaxy model. In other words, the distances from each galaxy to the center of its galaxy group are equal. Specifically, besides the Euclidean representation $\Phi(c_i^l)$, each embedded community $c_i^l$ has another attribute $r_i^l$ (the radius of the corresponding galaxy group).
+	 %\subsection{Model Framework based on Galaxy Structure}
+	 \subsection{Galaxy Network Embedding}
+	 We introduce stronger constraints and suppose galaxies are located at a spherical surface to simplify the objective Eq.\ref{equ:whole_loss}. In other words, the distances from each galaxy to the center of its galaxy group are equal. Besides the Euclidean representation $\Phi(c_i^l)$, each embedded community $c_i^l$ has another attribute $r_i^l$ (the radius of the corresponding galaxy group).
 	 We have the following constraints:
 
 	 \begin{equation}
@@ -313,42 +309,38 @@ third@email.address
 
 	 $\Rightarrow$ The first constraint in Eq.\ref{equ:whole_loss} can be satisfied, i.e.:
 	 \[
-	 	||\Phi(c_u^{l}) - \Phi(c_v^{l})||_2 - ||\Phi(c_u^{l}) - \Phi(c_w^{l})||_2 < 0
+	 	\lVert \Phi(c_u^{l}) - \Phi(c_v^{l})\rVert_2 - \lVert\Phi(c_u^{l}) - \Phi(c_w^{l})\rVert_2 < 0
 	 \]
 	 where
 	 \[
 	 	c_u^{l+1}, c_v^{l+1} \in \Gamma{(c_i^l)}, \quad c_w^{l+1} \in \Gamma{(c_j^l)}
 	 \]
-	 According to the Eq.\ref{equ:galaxy_constraints},
-	 \[
-	 	\begin{split}
-			&r_i^l, r_j^l < \frac{1}{5}||\Phi(c_i^{l}) - \Phi(c_j^{l})||_2 \\
-		 	&\Rightarrow r_i^l, r_j^l < ||\Phi(c_i^{l}) - \Phi(c_j^{l})||_2 - r_i^l -r_j^l
-		\end{split}
-	 \]
-	 Obviously,
+	 Obviously, 
 	 \[
 	 \begin{split}
-	 &||\Phi(c_v^{l+1}) - \Phi(c_u^{l+1})||_2 \le 2 \cdot r_i^l < ||\Phi(c_i^{l}) - \Phi(c_j^{l})||_2-r_i^l-r_j^l \\
-	 &||\Phi(c_v^{l+1}) - \Phi(c_w^{l+1})||_2 > ||\Phi(c_i^{l}) - \Phi(c_j^{l})||_2-r_i^l-r_j^l\\
-	 &\Rightarrow ||\Phi(c_v^{l+1}) - \Phi(c_u^{l+1})||_2 < ||\Phi(c_v^{l+1}) - \Phi(c_w^{l+1})||_2\\
+	 	\lVert \Phi(c_u^{l}) - \Phi(c_v^{l})\rVert_2 &< 2\max{(r_i^l, r_j^l)} \\
+	 	\lVert\Phi(c_u^{l}) - \Phi(c_w^{l})\rVert_2 &> d_{i, j}^{l-1} - 2\max{(r_i^l, r_j^l)} 
 	 \end{split}
+	 \]
+	 According to the Eq.\ref{equ:galaxy_constraints},
+	 \[
+	 	\lVert \Phi(c_u^{l}) - \Phi(c_v^{l})\rVert_2 - \lVert\Phi(c_u^{l}) - \Phi(c_w^{l})\rVert_2 < 0
 	 \]
 	 Thus, the first constraint in Eq.\ref{equ:whole_loss} can be satisfied.
 
 	 $\Rightarrow$ The second constraint in Eq.\ref{equ:whole_loss} can be satisfied, i.e.
 	 \[
-	 	||\Phi(c_v^{l+1}) - \Phi(c_i^{l})||_2 - ||\Phi(c_i^{l}) - \Phi(c_k^{l})||_2 < 0
+	 	\lVert\Phi(c_v^{l+1}) - \Phi(c_i^{l})\rVert_2 - \lVert\Phi(c_i^{l}) - \Phi(c_k^{l-1})\rVert_2 < 0
 	 \]
 	 where,
 	 \[
-	 	||\Phi(c_v^{l+1}) - \Phi(c_i^{l})||_2 = r_i^l, \quad ||\Phi(c_i^l) - \Phi(c_k^{l-1})||_2 = r_k^{l-1}
+	 	\lVert\Phi(c_v^{l+1}) - \Phi(c_i^{l})\rVert_2 = r_i^l, \quad \lVert\Phi(c_i^l) - \Phi(c_k^{l-1})\rVert_2 = r_k^{l-1}
 	 \]
 	 and according to Eq.\ref{equ:galaxy_constraints}, we have:
 	 \[
 	 	\begin{split}
 	 	r_i^l < \zeta d_{i, *}^{l-1} &\leq 2\zeta r_k^{l-1}, \quad \zeta < \frac{1}{5} \\
-	 	\Rightarrow ||\Phi(c_v^{l+1}) - \Phi(&c_i^{l})||_2 < ||\Phi(c_i^{l}) - \Phi(c_k^{l})||_2\\
+	 	\Rightarrow \lVert\Phi(c_v^{l+1}) - \Phi(&c_i^{l})\rVert_2 < \lVert\Phi(c_i^{l}) - \Phi(c_k^{l})\rVert_2\\
 	 	\end{split}
 	 \]
 	 In conclusion, the constraints of Eq.\ref{equ:whole_loss} can be satisfied if Eq.\ref{equ:sphere_constraints} and Eq.\ref{equ:galaxy_constraints} are satisfied.
@@ -361,14 +353,14 @@ third@email.address
 	  \label{equ:local_objective}
 	  \begin{split}
 	  O^{(k)}(\Phi, \Phi') & = \sum_{c_i^l, c_j^l \in \Gamma(c_k^{l-1})} \frac{S_{i,j}^l}{\sum_t S_{i, t}^l} \cdot \log{\sigma(\Phi(c_i^l)^T \Phi'(c_j^l))} \\
-		 + \frac{\lambda}{|\Gamma(c_k^{l-1})|}&\sum_{c_e^l \in \Gamma(c_k^{l-1})} \frac{S_{i, e}^l}{\sum_t S_{i, t}^l} \cdot \log{\sigma(-\Phi(c_i^l)^T \Phi'(c_e^l))}, \\
+		 + \frac{\lambda}{\lvert\Gamma(c_k^{l-1})\rvert}&\sum_{c_e^l \in \Gamma(c_k^{l-1})} \frac{S_{i, e}^l}{\sum_t S_{i, t}^l} \cdot \log{\sigma(-\Phi(c_i^l)^T \Phi'(c_e^l))}, \\
 		 \\
-		s.t. \quad \forall c_i^{l+1} & \in \Gamma(c_k^l),\quad || \Phi(c_i^{l+1})  - \Phi(c_k^l)||_2= r_k^l \\
+		s.t. \quad \forall c_i^{l+1} & \in \Gamma(c_k^l),\quad \lVert \Phi(c_i^{l+1})  - \Phi(c_k^l)\rVert_2= r_k^l \\
 	  \end{split}
 	  \end{equation}
-	Besides, we design a proper determination strategy of $r_i^l$ for each community $c_i^l$.
+	%Besides, we design a proper determination strategy of $r_i^l$ for each community $c_i^l$.
+	where, the radius $r_k^l$ for each community $c_k^l$ can be obtained with a proper determination strategy introduced next. In this way, we can optimize the objective Eq.\ref{equ:local_objective} recursively from top to bottom in hierarchy. The whole embedding procedure is illustrated in Fig.\ref{fig:structure}. 
 
-	In this way, we can optimize the objective Eq.\ref{equ:local_objective} recursively from top to bottom in hierarchy. The whole embedding procedure is illustrated in Fig.\ref{fig:structure}. Next, we will introduce how to determine the radius of each community and how to solve the optimization problem Eq.\ref{equ:local_objective} layer by layer.
 	\begin{figure}[ht]
 	 	\centering
 		\includegraphics[width=0.6\linewidth]{figure/Structure.pdf}
@@ -376,9 +368,72 @@ third@email.address
 		\label{fig:structure}
 	 \end{figure}
 
+	 \section{Learning Procedure of GNE}
+	 In this section, we introduce the learning algorithm of GNE, including how to solve the optimization problem Eq.\ref{equ:local_objective} layer by layer and how to obtain the radius of each community.
 
-	 \subsubsection{Strategy of Determining Radius}
-	 According to Eq.\ref{equ:galaxy_constraints}, we assume the radius $r$ and the distance $d$ between two spheres should be subject to:
+	 \subsection{Spherical Embedding Algorithm}
+	 Compared with the optimization objective of the classic neural embedding method, we just add an extra spherical constraint in Eq.\ref{equ:local_objective}. The neural embedding method can be directly optimized using SGD, which is efficient and whose effect has been verified. Considering these advantages, we transform Eq.\ref{equ:local_objective} into a two-step optimization procedure. First, we use the Adam optimizer \cite{Rushing2005ADaM} to optimize Eq.\ref{equ:local_loss} without constraint based on neural networks, and obtain the intermediate representation $\Omega(c^l_i)$ of communities which preserving the pairwise relative Euclidean distances of communities. Second, we map $\Omega(c^l_i)$ to a spherical surface to get the final representation $\Phi(c_i^l)$ of communities. Next, we introduce the spherical projection method.
+
+	 \subsubsection{Optimization Objective of Spherical Projection}
+	 To preserve the relative distances in spherical projection, we formally define the following optimization objective: 
+
+    \begin{equation}
+    \label{equ:sphere_objective}
+    \begin{split}
+    \min_{\Phi} J^{(k)} =  & \left\lVert\frac{D}{\lVert D \rVert_F} - \frac{B}{\lVert B \rVert_F}\right\rVert_F + \mu \exp(- \gamma \lVert B \rVert_F)\\ 
+    & s.t. \lVert \Phi(c_i^{l})  - \Phi(c_k^{l-1})\rVert= r_k^{l-1}\\
+    \end{split}
+    \end{equation}
+	 where,
+	 \[
+	 \begin{split}
+	 	c_i^l,c_j^l &\in \Gamma(c_k^{l-1})\\
+	 	D_{ij} = \lVert \Omega(c^{l}_i) - \Omega(c^{l}_j)\rVert &\quad B_{ij} = \lVert \Phi(c^{l}_i) - \Phi(c^{l}_j)\rVert \\
+	 \end{split}
+	 \]
+	 The first term is to preserve the relative distances, and the second term is a penalty term to make the distances between each pair of points after projection are as large as possible. $\mu$ and $\gamma$ are hyper parameters. As the overall optimization procedure is top-down, $\Phi(c_k^{l-1})$, $r_k^{l-1}$ and $D$ are all constants. 
+   
+    \subsubsection{Spherical Projection Optimization Procedure}
+    The constraints of Eq.\ref{equ:sphere_objective} are for arbitrary spherical surfaces. We can perform scaling and translation transformations on the coordinate system to turn them into the unit sphere constraints, namely the following conversion :
+    \begin{equation}
+    	\label{equ:transfer}
+    	\Psi(c_i^l) = \frac{\Phi(c_i^l) - \Phi(c_k^{l-1})}{r_k^{l-1}}, \quad and \quad \lVert \Psi(c_i^l) \rVert = 1.
+    \end{equation}
+    %Hence the constraints can be transformed as follows:
+   % \begin{equation}
+    %\label{equ:unit}
+    %	\lVert \Psi(c_i^l) \rVert = 1.
+    %\end{equation}
+    Combining with Eq.\ref{equ:transfer}, the Euclidean distance between $\Psi(c_i^{l})$ and $\Psi(c_j^l)$ can be expanded as follows: 
+    \begin{equation}
+    \begin{split}
+    \label{equ:bij}
+    	B_{ij}' &= \lVert \Psi(c_i^{l}) - \Psi(c_j^l) \rVert \\
+    			&= \lVert \Psi(c_i^l) \rVert^2 + \lVert \Psi(c_j^l) \rVert^2 - 2 \Psi(c_i^l)^T \Psi(c_j^l) \\
+    			&= 2 - 2\cos(\Psi(c_i^l), \Psi(c_j^l)) \\
+    \end{split}
+    \end{equation}
+    %Bringing Eq.\ref{equ:unit} into Eq.\ref{equ:bij}, we have:
+    %\begin{equation}
+    %\begin{split}
+    %	B_{ij}' = & \lVert \Psi(c_i^l) \rVert^2 + \lVert \Psi(c_j^l) \rVert^2 - 2 \Psi(c_i^l)^T \Psi(c_j^l) \\
+    %	= & 2 - 2\cos(\Psi(c_i^l), \Psi(c_j^l))
+    %\end{split}
+    %\end{equation}
+    It can be seen that $B_{ij}'$ is not related to the length of vector $\Psi(c_i^l)$ and $\Psi(c_j^l)$, but only the Cosine distance between them. Therefore, the vector length constraint in the objective can be removed. The final optimization objective on the unit sphere is: 
+    \begin{equation}
+	 	\label{equ:unit_sphere_objective}
+            \min_{\Psi} H^{(k)} = \left\lVert\frac{D}{\lVert D \rVert_F} - \frac{B'}{\lVert B' \rVert_F}\right\rVert_F + \mu \exp(- \gamma \lVert B' \rVert_F). 
+    \end{equation}
+    We use $\Psi_*(c_i^l)$ to denote the minimum point after optimization. After normalization, translation, and scaling, the final results are obtained: 
+    \begin{equation}
+    	\label{equ:sphere_transformation}
+    	\Phi(c_i^l) = \frac{\Psi_*(c_i^l)}{\lVert \Psi_*(c_i^l) \rVert} \times r_k^{l-1} + \Phi(c_k^{l-1}) 
+    \end{equation}
+    Obviously, the unconstrained objective has a lower bound that can be found using Gradient Descent algorithm.
+
+	 \subsection{Strategy of Determining Radius}
+	 According to Eq.\ref{equ:galaxy_constraints}, the radius $r$ and the distance $d$ between two spheres should be subject to:
 	 \begin{equation}
 	 	\label{equ:r_and_eta}
 	 	r_i^l= \eta \dot d_{i, *}^{l-1}, \quad \eta < \frac{1}{2}
@@ -423,74 +478,16 @@ third@email.address
 	 	\nonumber
 	 	\sum_{j=l}^L (2\eta)^{j-l+1}& < \frac{2\eta}{1-2\eta}< 2 \zeta \\
 	 	\nonumber
-	 	\eta <& \frac{\zeta}{1+2\zeta}
+	 	\Rightarrow \eta <& \frac{\zeta}{1+2\zeta}
 	 	\end{align}
+	 	In conclusion, when $\eta < \frac{\zeta}{1+2\zeta}$, the objective of GNE model (Eq.\ref{equ:galaxy_constraints}) is equivalent to the original objective (see Eq.\ref{equ:whole_loss}).
 	 \end{proof}
-	 In conclusion, when $\eta < \frac{\zeta}{1+2\zeta}$, the objective of GNE model (Eq.\ref{equ:galaxy_constraints}) is equivalent to the original objective (see Eq.\ref{equ:whole_loss}).
-	 
-	 \subsection{Spherical Embedding}
-	 Compared with the optimization objective of the classic neural embedding method, we just add an extra spherical constraint in Eq.\ref{equ:local_objective}. The neural embedding method can be directly optimized using SGD, which is efficient and whose effect has been verified. Considering these advantages, we transform Eq.\ref{equ:local_objective} into a two-step optimization procedure. First, we use the Adam optimizer\cite{Rushing2005ADaM} to optimize Eq.\ref{equ:local_loss} without constraint based on neural networks, and obtain the representation of communities $\Omega(c^l_i)$ which preserving the pairwise relative Euclidean distances of communities. Second, we map $\Omega(c^l_i)$ to a spherical surface to get the final representation of communities $\Phi(c_i^l)$. Next, we introduce the spherical projection method.
-	 
-	 \subsubsection{Optimization Objective of Spherical Projection}
-	 To preserve the relative distances in spherical projection, we formally define the following optimization objective: 
-
-    \begin{equation}
-    \label{equ:sphere_objective}
-    \begin{split}
-    \min_{\Phi} J^{(k)} =  & \left\lVert\frac{D}{\lVert D \rVert_F} - \frac{B}{\lVert B \rVert_F}\right\rVert_F + \mu \exp(- \gamma \lVert B \rVert_F)\\ 
-    & s.t. \quad || \Phi(c_i^{l})  - \Phi(c_k^{l-1})||= r_k^{l-1}\\
-    \end{split}
-    \end{equation}
-	 where,
-	 \[
-	 \begin{split}
-	 	& c_i^l,c_j^l \in \Gamma(c_k^{l-1}) \\
-	 	D_{ij} & = \lVert \Omega(c^{l}_i) - \Omega(c^{l}_j)\rVert \\
-	 	B_{ij} & = \lVert \Phi(c^{l}_i) - \Phi(c^{l}_j)\rVert \\
-	 \end{split}
-	 \]
-	 The first term is to preserve the relative distances, and the second term is a penalty term to make the distances between each pair of points after projection are as large as possible. $\mu$ and $\gamma$ are hyper parameters. As the overall optimization procedure is top-down, $\Phi(c_k^{l-1})$, $r_k^{l-1}$ and $D$ are all constants. 
-   
-    \subsubsection{Spherical Projection Optimization Procedure}
-    The constraints of Eq.\ref{equ:sphere_objective} are for arbitrary spherical surfaces. We can perform scaling and translation transformations on the coordinate system to turn them into the unit sphere constraints, namely the following conversion :
-    \begin{equation}
-    	\label{equ:transfer}
-    	\Psi(c_i^l) = \frac{\Phi(c_i^l) - \Phi(c_k^{l-1})}{r_k^{l-1}}.
-    \end{equation}
-    Hence the constraints can be transformed as follows:
-    \begin{equation}
-    \label{equ:unit}
-    	\lVert \Psi(c_i^l) \rVert = 1.
-    \end{equation}
-    The Euclidean distance between $\Psi(c_i^{l})$ and $\Psi(c_j^l)$ is 
-    \begin{equation}
-    \label{equ:bij}
-    	B_{ij}' = \lVert \Psi(c_i^{l}) - \Psi(c_j^l) \rVert
-    \end{equation}
-    Bringing Eq.\ref{equ:unit} into Eq.\ref{equ:bij}, we have:
-    \begin{equation}
-    \begin{split}
-    	B_{ij}' = & \lVert \Psi(c_i^l) \rVert^2 + \lVert \Psi(c_j^l) \rVert^2 - 2 \Psi(c_i^l)^T \Psi(c_j^l) \\
-    	= & 2 - 2\cos(\Psi(c_i^l), \Psi(c_j^l))
-    \end{split}
-    \end{equation}
-    It can be seen that $B_{ij}'$ is not related to the length of vector $\Psi(c_i^l)$ and $\Psi(c_j^l)$, but only the Cosine distance between them. Therefore, the vector length constraint in the objective can be removed. The final optimization objective on the unit sphere is: 
-    \begin{equation}
-	 	\label{equ:unit_sphere_objective}
-        \begin{split}
-            \min_{\Psi} H^{(k)} =  & \left\lVert\frac{D}{\lVert D \rVert_F} - \frac{B'}{\lVert B' \rVert_F}\right\rVert_F + \mu \exp(- \gamma \lVert B' \rVert_F).\\ 
-        \end{split}
-    \end{equation}
-    We use $\Psi_*(c_i^l)$ to denote the minimum point after optimization. After normalization, translation, and scaling, the final results are obtained: 
-    \begin{equation}
-    	\label{equ:sphere_transformation}
-    	\Phi(c_i^l) = \frac{\Psi_*(c_i^l)}{\lVert \Psi_*(c_i^l) \rVert} \times r_k^{l-1} + \Phi(c_k^{l-1}) 
-    \end{equation}
-    Obviously, the unconstrained objective has a lower bound. The minimum points can be found using Gradient Descent algorithm.
 
     \subsection{The GNE Algorithm}
-
-\begin{algorithm}[H] 
+	The pseudocode for GNE, is given in Algorithm \ref{alg:gne}. The whole embedding process is executed from top to down. For all children nodes of a certain node $c_i^l$, i.e. the nodes in $\Gamma(c_i^{l})$, the learned representation $\Psi(\Gamma(c_i^{l}))$ on the unit sphere can be obtain after two-step optimization procedure with Adam\cite{Rushing2005ADaM}, the optimization Eq.\ref{equ:local_loss} is used first and the optimization Eq.\ref{equ:unit_sphere_objective} follows.
+    The final representation $\Phi(c_j^{l+1})$ can be obtained by the transformation in Eq.\ref{equ:sphere_transformation}. Besides, the corresponding $r_j^{l+1}$ can be calculated with minimum distance $d_{j,*}$ and a constant $\eta$ less than $\frac{1}{5}$ (see Lemma \ref{prf:eta}).
+    
+    \begin{algorithm}[H] 
 \caption{The GNE algorithm} 
 	\label{alg:gne} 
 \begin{algorithmic}
@@ -518,12 +515,8 @@ third@email.address
 \end{algorithmic} 
 \end{algorithm}
 
-	The pseudocode for GNE, is given in Algorithm \ref{alg:gne}. The whole embedding process is executed from top to down. For all children nodes of a certain node $c_i^l$, i.e. the nodes in $\Gamma(c_i^{l})$, the learned representation $\Psi(\Gamma(c_i^{l}))$ on the unit sphere can be obtain after two-step optimization procedure with Adam\cite{Rushing2005ADaM}, the optimization Eq.\ref{equ:local_loss} is used first and the optimization Eq.\ref{equ:unit_sphere_objective} follows.
-    The final representation $\Phi(c_j^{l+1})$ can be obtained by the transformation in Eq.\ref{equ:sphere_transformation}. Besides, the corresponding $r_j^{l+1}$ can be calculated with minimum distance $d_{j,*}$ and a constant $\eta$ less than $\frac{1}{5}$ (see Lemma \ref{prf:eta}).
-    
-
     \subsubsection{Time Complexity Analysis}
-    For brevity on description, we assume that the hierarchical clustering tree of network G=(V,E) is a k-ary tree $T_G$ with depth $log_K|V|$. The number of nodes N in $T_G$ is $\frac{K^{log_K|V|+1} -1}{K-1}$. Spherical embedding should be done on each tree node layer by layer. Especially, the embedding procedures on the same layer tree nodes can be parallelized. For spherical embedding, the complexity of computing $\Omega(\Gamma(c_i^{l}))$ is $O(\mathcal{E} \times K \times Q)$. More precisely, $\mathcal{E}$ is the number of training epoch, $K$ is the size of community to be embedded and $Q$ is the neural network computing complexity of skip-gram model, i.e. $Q=O(C \times (\mathcal{D}+\mathcal{D} \times M))$, where $C$ is the skip window size, $\mathcal{D}$ is the embedding size and $M$ is the negative sampling size; the complexity of computing $\Psi(\Gamma(c_i^{l}))$ is $O(\mathcal{E} \times K^2 \times \mathcal{D})$. Thus, the spherical embedding complexity is $O(\mathcal{E} \times K \times Q + \mathcal{E} \times K^2 \times \mathcal{D})$. The optimization algorithm is implemented on the Tensorflow platform, which can be accelerated with GPU.
+    For brevity on description, we assume that the hierarchical clustering tree of network $G=(V,E)$ is a k-ary tree $T_G$ with depth $log_K|V|$. The number of nodes N in $T_G$ is $\frac{K^{log_K|V|+1} -1}{K-1}$. Spherical embedding should be done on each tree node layer by layer. Especially, the embedding procedures on the same layer tree nodes can be parallelized. For spherical embedding, the complexity of computing $\Omega(\Gamma(c_i^{l}))$ is $O(\mathcal{E} \times K \times Q)$. More precisely, $\mathcal{E}$ is the number of training epoch, $K$ is the size of community to be embedded and $Q$ is the neural network computing complexity of skip-gram model, i.e. $Q=O(C \times (\mathcal{D}+\mathcal{D} \times M))$, where $C$ is the skip window size, $\mathcal{D}$ is the embedding size and $M$ is the negative sampling size; the complexity of computing $\Psi(\Gamma(c_i^{l}))$ is $O(\mathcal{E} \times K^2 \times \mathcal{D})$. Thus, the spherical embedding complexity is $O(\mathcal{E} \times K \times Q + \mathcal{E} \times K^2 \times \mathcal{D})$. The optimization algorithm is implemented on the Tensorflow platform, which can be accelerated with GPU.
 
 \section{Experiments}
 	In this section, An experimental analysis of our method on both synthetic and real networks is presented. The code of our model is available on Github.
